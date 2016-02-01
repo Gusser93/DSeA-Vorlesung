@@ -1,0 +1,632 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: /home/markus/Dokumente/Uni/DSeA/Vorlesung/15/Grafik/GerichteterGraph.dia
+%%Creator: Dia v0.97.3
+%%CreationDate: Tue Dec  8 10:47:04 2015
+%%For: markus
+%%Orientation: Portrait
+%%Magnification: 1.0000
+%%BoundingBox: 0 0 1246 618
+%%BeginSetup
+%%EndSetup
+%%EndComments
+%%BeginProlog
+[ /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /space /exclam /quotedbl /numbersign /dollar /percent /ampersand /quoteright
+/parenleft /parenright /asterisk /plus /comma /hyphen /period /slash /zero /one
+/two /three /four /five /six /seven /eight /nine /colon /semicolon
+/less /equal /greater /question /at /A /B /C /D /E
+/F /G /H /I /J /K /L /M /N /O
+/P /Q /R /S /T /U /V /W /X /Y
+/Z /bracketleft /backslash /bracketright /asciicircum /underscore /quoteleft /a /b /c
+/d /e /f /g /h /i /j /k /l /m
+/n /o /p /q /r /s /t /u /v /w
+/x /y /z /braceleft /bar /braceright /asciitilde /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef
+/space /exclamdown /cent /sterling /currency /yen /brokenbar /section /dieresis /copyright
+/ordfeminine /guillemotleft /logicalnot /hyphen /registered /macron /degree /plusminus /twosuperior /threesuperior
+/acute /mu /paragraph /periodcentered /cedilla /onesuperior /ordmasculine /guillemotright /onequarter /onehalf
+/threequarters /questiondown /Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla
+/Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis /Eth /Ntilde
+/Ograve /Oacute /Ocircumflex /Otilde /Odieresis /multiply /Oslash /Ugrave /Uacute /Ucircumflex
+/Udieresis /Yacute /Thorn /germandbls /agrave /aacute /acircumflex /atilde /adieresis /aring
+/ae /ccedilla /egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis
+/eth /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /divide /oslash /ugrave
+/uacute /ucircumflex /udieresis /yacute /thorn /ydieresis] /isolatin1encoding exch def
+/cp {closepath} bind def
+/c {curveto} bind def
+/f {fill} bind def
+/a {arc} bind def
+/ef {eofill} bind def
+/ex {exch} bind def
+/gr {grestore} bind def
+/gs {gsave} bind def
+/sa {save} bind def
+/rs {restore} bind def
+/l {lineto} bind def
+/m {moveto} bind def
+/rm {rmoveto} bind def
+/n {newpath} bind def
+/s {stroke} bind def
+/sh {show} bind def
+/slc {setlinecap} bind def
+/slj {setlinejoin} bind def
+/slw {setlinewidth} bind def
+/srgb {setrgbcolor} bind def
+/rot {rotate} bind def
+/sc {scale} bind def
+/sd {setdash} bind def
+/ff {findfont} bind def
+/sf {setfont} bind def
+/scf {scalefont} bind def
+/sw {stringwidth pop} bind def
+/tr {translate} bind def
+
+/ellipsedict 8 dict def
+ellipsedict /mtrx matrix put
+/ellipse
+{ ellipsedict begin
+   /endangle exch def
+   /startangle exch def
+   /yrad exch def
+   /xrad exch def
+   /y exch def
+   /x exch def   /savematrix mtrx currentmatrix def
+   x y tr xrad yrad sc
+   0 0 1 startangle endangle arc
+   savematrix setmatrix
+   end
+} def
+
+/mergeprocs {
+dup length
+3 -1 roll
+dup
+length
+dup
+5 1 roll
+3 -1 roll
+add
+array cvx
+dup
+3 -1 roll
+0 exch
+putinterval
+dup
+4 2 roll
+putinterval
+} bind def
+/Times-Roman-latin1
+    /Times-Roman findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Times-Italic-latin1
+    /Times-Italic findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Times-Bold-latin1
+    /Times-Bold findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Times-BoldItalic-latin1
+    /Times-BoldItalic findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/AvantGarde-Gothic-latin1
+    /AvantGarde-Gothic findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/AvantGarde-BookOblique-latin1
+    /AvantGarde-BookOblique findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/AvantGarde-Demi-latin1
+    /AvantGarde-Demi findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/AvantGarde-DemiOblique-latin1
+    /AvantGarde-DemiOblique findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Bookman-Light-latin1
+    /Bookman-Light findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Bookman-LightItalic-latin1
+    /Bookman-LightItalic findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Bookman-Demi-latin1
+    /Bookman-Demi findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Bookman-DemiItalic-latin1
+    /Bookman-DemiItalic findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Courier-latin1
+    /Courier findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Courier-Oblique-latin1
+    /Courier-Oblique findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Courier-Bold-latin1
+    /Courier-Bold findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Courier-BoldOblique-latin1
+    /Courier-BoldOblique findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Helvetica-latin1
+    /Helvetica findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Helvetica-Oblique-latin1
+    /Helvetica-Oblique findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Helvetica-Bold-latin1
+    /Helvetica-Bold findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Helvetica-BoldOblique-latin1
+    /Helvetica-BoldOblique findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Helvetica-Narrow-latin1
+    /Helvetica-Narrow findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Helvetica-Narrow-Oblique-latin1
+    /Helvetica-Narrow-Oblique findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Helvetica-Narrow-Bold-latin1
+    /Helvetica-Narrow-Bold findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Helvetica-Narrow-BoldOblique-latin1
+    /Helvetica-Narrow-BoldOblique findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/NewCenturySchlbk-Roman-latin1
+    /NewCenturySchlbk-Roman findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/NewCenturySchlbk-Italic-latin1
+    /NewCenturySchlbk-Italic findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/NewCenturySchlbk-Bold-latin1
+    /NewCenturySchlbk-Bold findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/NewCenturySchlbk-BoldItalic-latin1
+    /NewCenturySchlbk-BoldItalic findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Palatino-Roman-latin1
+    /Palatino-Roman findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Palatino-Italic-latin1
+    /Palatino-Italic findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Palatino-Bold-latin1
+    /Palatino-Bold findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Palatino-BoldItalic-latin1
+    /Palatino-BoldItalic findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/Symbol-latin1
+    /Symbol findfont
+definefont pop
+/ZapfChancery-MediumItalic-latin1
+    /ZapfChancery-MediumItalic findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+/ZapfDingbats-latin1
+    /ZapfDingbats findfont
+    dup length dict begin
+	{1 index /FID ne {def} {pop pop} ifelse} forall
+	/Encoding isolatin1encoding def
+    currentdict end
+definefont pop
+28.346000 -28.346000 scale
+-2.973572 -30.825000 translate
+%%EndProlog
+
+
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+0 slj
+0.100000 slw
+0 slc
+0 slj
+[] 0 sd
+1.000000 1.000000 1.000000 srgb
+n 16.962500 11.212500 2.112500 2.112500 0 360 ellipse f
+0.000000 0.000000 0.000000 srgb
+n 16.962500 11.212500 2.112500 2.112500 0 360 ellipse cp s
+0 slc
+0 slj
+[] 0 sd
+n 16.962500 11.212500 2.112500 2.112500 0 360 ellipse cp s
+/Helvetica-latin1 ff 0.740833 scf sf
+(V_1) 16.262500 11.247917 m
+ gs 1 -1 sc sh gr
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+0 slj
+0.100000 slw
+0 slc
+0 slj
+[] 0 sd
+1.000000 1.000000 1.000000 srgb
+n 11.322500 23.387500 2.112500 2.112500 0 360 ellipse f
+0.000000 0.000000 0.000000 srgb
+n 11.322500 23.387500 2.112500 2.112500 0 360 ellipse cp s
+0 slc
+0 slj
+[] 0 sd
+n 11.322500 23.387500 2.112500 2.112500 0 360 ellipse cp s
+(V_2) 10.772500 23.372917 m
+ gs 1 -1 sc sh gr
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+0 slj
+0.100000 slw
+0 slc
+0 slj
+[] 0 sd
+1.000000 1.000000 1.000000 srgb
+n 21.532500 20.062500 2.112500 2.112500 0 360 ellipse f
+0.000000 0.000000 0.000000 srgb
+n 21.532500 20.062500 2.112500 2.112500 0 360 ellipse cp s
+0 slc
+0 slj
+[] 0 sd
+n 21.532500 20.062500 2.112500 2.112500 0 360 ellipse cp s
+(V_3) 20.932500 20.097917 m
+ gs 1 -1 sc sh gr
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+0 slj
+0.100000 slw
+0 slc
+0 slj
+[] 0 sd
+1.000000 1.000000 1.000000 srgb
+n 33.292500 14.187500 2.112500 2.112500 0 360 ellipse f
+0.000000 0.000000 0.000000 srgb
+n 33.292500 14.187500 2.112500 2.112500 0 360 ellipse cp s
+0 slc
+0 slj
+[] 0 sd
+n 33.292500 14.187500 2.112500 2.112500 0 360 ellipse cp s
+(V_4) 32.742500 14.172917 m
+ gs 1 -1 sc sh gr
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+0 slj
+0.100000 slw
+0 slc
+0 slj
+[] 0 sd
+1.000000 1.000000 1.000000 srgb
+n 33.002500 28.662500 2.112500 2.112500 0 360 ellipse f
+0.000000 0.000000 0.000000 srgb
+n 33.002500 28.662500 2.112500 2.112500 0 360 ellipse cp s
+0 slc
+0 slj
+[] 0 sd
+n 33.002500 28.662500 2.112500 2.112500 0 360 ellipse cp s
+(V_5) 32.452500 28.647917 m
+ gs 1 -1 sc sh gr
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+0 slj
+0.100000 slw
+0 slc
+0 slj
+[] 0 sd
+1.000000 1.000000 1.000000 srgb
+n 44.762500 21.337500 2.112500 2.112500 0 360 ellipse f
+0.000000 0.000000 0.000000 srgb
+n 44.762500 21.337500 2.112500 2.112500 0 360 ellipse cp s
+0 slc
+0 slj
+[] 0 sd
+n 44.762500 21.337500 2.112500 2.112500 0 360 ellipse cp s
+(V_6) 44.212500 21.322917 m
+ gs 1 -1 sc sh gr
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+0 slj
+0.100000 slw
+0 slc
+0 slj
+[] 0 sd
+1.000000 1.000000 1.000000 srgb
+n 6.622500 15.462500 2.112500 2.112500 0 360 ellipse f
+0.000000 0.000000 0.000000 srgb
+n 6.622500 15.462500 2.112500 2.112500 0 360 ellipse cp s
+0 slc
+0 slj
+[] 0 sd
+n 6.622500 15.462500 2.112500 2.112500 0 360 ellipse cp s
+(S) 6.522500 15.447917 m
+ gs 1 -1 sc sh gr
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+n 13.618341 15.851980 4.800183 4.800183 186.603129 282.200496 ellipse s
+0.100000 slw
+[] 0 sd
+0 slj
+0 slc
+n 14.194532 11.297150 m 14.741940 11.183813 l 14.322825 10.813890 l s
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+n 10.280773 11.162392 4.569502 4.569502 0.628309 106.970630 ellipse s
+0.100000 slw
+[] 0 sd
+0 slj
+0 slc
+n 9.395305 15.434200 m 8.840212 15.500321 l 9.226165 15.904722 l s
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+n 22.563139 23.134146 12.421464 12.421464 253.691119 312.892991 ellipse s
+0.100000 slw
+[] 0 sd
+0 slj
+0 slc
+n 30.565917 13.943152 m 31.099473 14.109941 l 30.912771 13.583023 l s
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+n 27.798721 1.831048 12.810736 12.810736 74.695962 131.919478 ellipse s
+0.100000 slw
+[] 0 sd
+0 slj
+0 slc
+n 19.693273 11.446042 m 19.156875 11.288635 l 19.352788 11.812197 l s
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+n 22.650786 12.274686 5.784441 5.784441 103.360736 169.538444 ellipse s
+0.100000 slw
+[] 0 sd
+0 slj
+0 slc
+n 20.883907 18.077006 m 21.422806 17.928385 l 20.980570 17.586439 l s
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+n 15.844214 19.000314 5.784441 5.784441 283.360736 349.538444 ellipse s
+0.100000 slw
+[] 0 sd
+0 slj
+0 slc
+n 17.611093 13.197994 m 17.072194 13.346615 l 17.514430 13.688561 l s
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+n 4.837981 13.677981 1.814409 1.814409 107.439974 349.585702 ellipse s
+0.100000 slw
+[] 0 sd
+0 slj
+0 slc
+n 3.863084 15.597789 m 4.400038 15.442290 l 3.953466 15.106026 l s
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+n 12.082157 18.626749 5.560039 5.560039 123.405559 190.903896 ellipse s
+0.100000 slw
+[] 0 sd
+0 slj
+0 slc
+n 8.557004 23.285521 m 9.114269 23.329746 l 8.815290 22.857399 l s
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+n 28.862128 -20.907095 49.611058 49.611058 87.915601 110.704157 ellipse s
+0.100000 slw
+[] 0 sd
+0 slj
+0 slc
+n 30.288927 28.937299 m 30.778290 28.667070 l 30.268489 28.437717 l s
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+n 36.459353 19.616446 9.145402 9.145402 24.782722 97.052366 ellipse s
+0.100000 slw
+[] 0 sd
+0 slj
+0 slc
+n 35.756907 28.505149 m 35.225589 28.678935 l 35.683408 28.999718 l s
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+n 20.509232 21.067429 13.643325 13.643325 340.486318 23.693884 ellipse s
+0.100000 slw
+[] 0 sd
+0 slj
+0 slc
+n 33.740525 16.785878 m 33.331568 16.404755 l 33.272044 16.960594 l s
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+n 18.323746 25.138243 5.192778 5.192778 199.703309 279.721786 ellipse s
+0.100000 slw
+[] 0 sd
+0 slj
+0 slc
+n 18.769208 20.177707 m 19.310716 20.038897 l 18.874763 19.688976 l s
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+n -5.647140 -25.275747 53.977644 53.977644 47.216339 57.134301 ellipse s
+0.100000 slw
+[] 0 sd
+0 slj
+0 slc
+n 30.903275 14.787689 m 31.098260 14.263780 l 30.562142 14.422137 l s
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+n 24.175653 12.973572 7.108762 7.108762 9.832302 92.479336 ellipse s
+0.100000 slw
+[] 0 sd
+0 slj
+0 slc
+n 24.273758 19.858867 m 23.756491 20.070846 l 24.236434 20.357472 l s
+0.100000 slw
+[] 0 sd
+[] 0 sd
+0 slc
+n 15.045961 19.238230 4.451026 4.451026 10.672002 108.342832 ellipse s
+0.100000 slw
+[] 0 sd
+0 slj
+0 slc
+n 14.095809 23.375879 m 13.539224 23.427965 l 13.914844 23.841981 l s
+showpage

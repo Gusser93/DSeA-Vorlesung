@@ -1,0 +1,19 @@
+\chapter{Vorlesung}
+
+\section{Quicksort}
+\[T\left(n \right)= \frac{1}{n} \sum_{i=1}^n T\left(i-1 \right) + T\left(n-i \right) + n ~~~\in O\left(n\log\left(n \right) \right)\] 
+
+\section{Quickselect}
+\[T\left(n \right) = n+\frac{1}{n} \sum_{i=1}^{n} max\left(T\left(i-1 \right), T\left(n-i \right) \right)\]
+
+\paragraph{Behauptung} Select $\in O\left(n \right)$, also $T\left(n \right) = c \cdot n$
+\paragraph{Beweis} Induktion
+\[T\left(n \right)=n+\frac{1}{n} \sum_{i=1}^n max\left(c\left(i-1 \right), c\left(n-i \right) \right)\]
+\[=n+\frac{1}{n} \cdot c \sum_{i=1}^n max\left(\left(i-1 \right), \left(n-i \right) \right)\]
+\[=n+\frac{1}{n} \cdot c \cdot 2 \left(\sum_{i=1}^{n-1} i  -  \sum_{i=1}^{\frac{n}{c}-1} i  \right)\]
+\[=n+\frac{1}{n} \cdot c \cdot Z \left(\frac{\left(n-1 \right)n}{Z} - \frac{\left(\frac{n}{2}-1 \right)\frac{1}{2}}{Z} \right)\]
+\[=n+\frac{1}{n}c\left(n\left(n-1 \right)-\frac{n}{2}\left(\frac{n}{2}-1 \right) \right) = n + \frac{1}{n}\cdot c \left(n^2-n-\frac{n^2}{4}+\frac{n}{2} \right)\]
+\[=n + \frac{1}{n} c \left(\frac{3}{4} n^2 - \frac{1}{2}n \right) = n + c\left( \frac{3}{4} n - \frac{1}{2} \right)\]
+\[\Rightarrow cn = n+c\left(\frac{3}{4}n-\frac{1}{2} \right) = n+\frac{3}{4}cn-\frac{1}{2}c\]
+\[\Rightarrow cn \geq n + \frac{3}{4} cn \Leftrightarrow c \geq 4 \]
+\[q.e.d\]

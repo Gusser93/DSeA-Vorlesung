@@ -1,0 +1,183 @@
+\chapter{Vorlesung}
+
+
+\section{Master-Theorem}
+\begin{flalign*}
+&T(n)=T\left(\frac{n}{b} \cdot a + n^{\alpha} \right)&\\
+&T(1)= 0&\\
+&T(n) = a^i T\left(\frac{n}{b^i}\right) + n^{\alpha} \sum_{j=0}^{i-1} \left(\frac{a}{b^{\alpha}} \right)^j&\\
+\\
+&\text{\underline{o.B.d.A}}&\\
+&n=b^k \Leftrightarrow k = \log_b(n)&
+\end{flalign*}
+
+\subsection{Fall 1}
+$(\frac{a}{b^{\alpha}}) < 1 \Leftrightarrow a < b^{\alpha} \Leftrightarrow \log_b(a) < \alpha$
+
+\begin{mdframed}
+\begin{flalign*}
+&\sum_{j=0}^{k-1} x^j = \frac{x^k-1}{x-1}~~~~\text{für}~x \not= 1&
+\end{flalign*}
+\end{mdframed}
+
+\begin{flalign*}
+&\Rightarrow \sum_{j=0}^{k-1} \left(\frac{a}{b^{\alpha}} \right)^j \leq \frac{1}{1-\frac{a}{b^{\alpha}}} = c'&\\
+\\
+&T(n) = a^k T(1) + n^{\alpha} \cdot c'&\\
+&~~~~~~~=c \cdot n^{\log_b(a)} + c' \cdot n^{\alpha} = \Theta(n^{\alpha})&\\
+\\
+&\textbf{Nebenbedingung}~~~~a^{\log_b(n)} = \left(b^{\log_b(a)} \right)^{\log_b(n)} = \left(b^{\log_b(n)} \right)^{\log_b(a)} = n^{\log_b(a)}&
+\end{flalign*}
+
+\pagebreak
+
+\subsection{Fall 2}
+$(\frac{a}{b^{\alpha}}) > 1 \Leftrightarrow \log_b(a) > \alpha$
+
+\begin{flalign*}
+&\sum_{j=0}^{k-1} \left(\frac{a}{b^{\alpha}}\right)^j = \left(\frac{\left(\frac{a}{b^{\alpha}}\right)^{\log_b\left(n\right)} -1}{\left(\frac{a}{b^{\alpha}}\right)-1}\right) \leq \left(\frac{a}{b^{\alpha}}\right)^{\log_b\left(n\right)} \cdot c''  = \frac{a^{\log_b(n)}}{b^{\alpha \log_b(n)}} = \frac{n^{\log_b(\alpha)}}{n^{\alpha}}&\\
+\\
+&T(n) = c \cdot n^{\log_b(a)} + n^{\alpha} \cdot \frac{n^{\log_b(a)}}{n^{\alpha}} \cdot c'' = \Theta \left(n^{\log_b(a)} \right)&\\
+\end{flalign*}
+
+
+\subsection{Fall 3}
+$\left(\frac{a}{b^{\alpha}} \right) = 1 \Leftrightarrow a = b^{\alpha} \Leftrightarrow \log_b(a) = \alpha$
+
+\begin{flalign*}
+&T(n) = c \cdot n^{\log_b(a)} + n^{\alpha} \cdot \log_b(n) = \Theta \left(n^{\alpha} \cdot \log(n) \right) &
+\end{flalign*}
+
+\subsection{Beispiel: Mergesort}
+\begin{flalign*}
+&T(n) = \text{\hlr{2}} T \left(\frac{n}{\text{\hly{2}}^{\text{\hlg{1}}}} \right) + n&\\
+&T(1)=0&
+\end{flalign*}
+
+\paragraph{Ermittle} $\text{\hlr{a}}=2~~~~\text{\hly{b}}=2~~~~\text{\hlg{$\alpha$}}=1$
+\begin{flalign*}
+&\log_2(2) = 1 = \alpha \Rightarrow \text{3. Fall} \Rightarrow \Theta(n \cdot \log(n))&
+\end{flalign*}
+
+\section{Schnelle Multiplikation langer Zahlen}
+
+A = \begin{tabular}{| c | @{\hspace{2em}}c@{\hspace{2em}} | c | @{\hspace{2em}}c@{\hspace{2em}}| c | c | c |}
+  \hline
+  $a_{n-1}$ & ... & $a_i$ & ... & $a_2$ & $a_1$ & $a_0$ \\
+  \hline
+\end{tabular} $~~~a_i \in \mathbb{B} = \{0, 1\} $
+\begin{flalign*}
+&~~~= \sum_{i=0}^{n-1} a_i 2^i&
+\end{flalign*}\\
+
+
+B = \begin{tabular}{| c | @{\hspace{2em}}c@{\hspace{2em}} | c | c | c |}
+  \hline
+  $b_{n-1}$ & ... & $b_2$ & $b_1$ & $b_0$ \\
+  \hline
+\end{tabular}
+\begin{flalign*}
+&~~~= \sum_{i=0}^{n-1} b_i 2^i&
+\end{flalign*}
+
+
+
+\paragraph{Frage} Wie schnell können wir zwei n-stellige Binärzahlen addieren/subtrahieren/multiplizieren ?
+
+\paragraph{Addition} $\Theta(n)$
+
+\pagebreak
+
+
+\subsection{Schulmethode zur Multiplikation}
+\paragraph{Beispiel}
+\begin{tabular}{c c c c c c c c c c c c c | l}
+  1 & 0 & 1 & 1 & 0 & 1 & $\cdot$ & 0 & 1 & 0 & 1 & 1 & 1 & \text{}\\
+  \cline{1-13}
+  \text{} &  \text{}  & 0 & 0 & 0 & 0 & 0 & 0 &  \text{} &  \text{} &  \text{} &  \text{} &  \text{}  & \text{} \\
+  \text{} &  \text{} & \text{} & 1 & 0 & 1 & 1 & 0 & 1 &  \text{} &  \text{} &  \text{} &  \text{}  & n-Partialprodukte\\
+  \text{} &  \text{}  & \text{} &  \text{} & 0 & 0 & 0 & 0 & 0 & 0 &  \text{} &  \text{} &  \text{}  & mit höchstens\\
+  \text{} &  \text{} & \text{} &  \text{} &  \text{} & 1 & 0 & 1 & 1 & 0 & 1 &  \text{} &  \text{} & 2n Ziffern \\
+  \text{} &  \text{} & \text{} &  \text{} &  \text{} & \text{} & 1 & 0 & 1 & 1 & 0 & 1 &  \text{} & \text{}\\
+  \text{} &  \text{} & \text{} &  \text{} &  \text{} & \text{} & $\text{}_1$  & 1 & 0 & $1_1$ & 1 & 0 & 1 & \text{}\\
+  \cline{1-13}
+  \text{} &  \text{} & 1 &  0 & 0 & 0 & 0  & 0 & 0 & 1 & 0 & 1 & 1 & \text{}\\
+\end{tabular}\\
+
+$n^2$ Aufwand zur Ermittlung der Partialprodukte + $n~\cdot$ Kosten für die Addition von Zahlen der Länge $2n ~~~ \Rightarrow \Theta(n^2)$ 
+
+\paragraph{Ziel} $o(n^2) ~~~ O(n^{1,58}) $
+
+
+
+\subsection{Karazuba Ofman}
+A = \begin{tabular}{| c | c | c | c @{\hspace{2em}} | c | c | c |}
+\cline{1-3}
+\cline{5-7}
+$a_{n-1}$ & ... & $a_{\frac{n}{2}}$ & \text{} &  $a_{\frac{n}{2}-1}$ & ... & $a_0$\\
+\cline{1-3}
+\cline{5-7}
+\end{tabular}\\
+
+$~~~$\begin{tabular}{ @{\hspace{4em}}c @{\hspace{8em}}c}
+$=A_1$ & $=A_0$ \\
+\end{tabular}
+%
+\begin{flalign*}
+&A=A_0 + A_1 2^{\frac{n}{2}}&\\
+\\
+&A \cdot B = (A_0 + A_1 2^{\frac{n}{2}}) (B_0 + B_1 2^{\frac{n}{2}})&\\
+&~~~~~~~= \text{\hlr{$A_0 B_0$}} + \text{\hlr{$A_0 B_1$}} 2^{\frac{n}{2}} + \text{\hlr{$A_1 B_0$}} 2^{\frac{n}{2}} + \text{\hlr{$A_1 B_1$}} 2^n&
+\end{flalign*}
+\paragraph{Legende} \hlr{\text{  }} markierte Elemente haben die Länge \hlr{$\frac{n}{2}$}
+\paragraph{Anmerkung} Addition von Zahlen der Länge $2n$ \\
+
+Sei $T(n)$ die Laufzeit dieser rekursiven Methode zur Multiplikation zweier $n$-stelliger Zahlen:\\
+\begin{flalign*}
+&T(n) = \text{\hlr{$4$}} \cdot T \left(\text{\hlr{$\frac{n}{2}$}} \right) + c \cdot n~~~~~~T(1) = c&
+\end{flalign*}
+
+\paragraph{Mastertheoreme}
+\begin{flalign*}
+&a=4~~~~b=2~~~~\alpha=1~~~~~\log_2(4) = 2 > \alpha&\\
+&\Rightarrow T(n) = \Theta(n^2)&\\
+&\Rightarrow \text{kein Gewinn bisher!!!}&
+\end{flalign*}
+
+
+\pagebreak
+
+
+\paragraph{Ziel} Ermittle Partialprodukte auf anderem Weg\\
+
+1.) ($A_0$ \hly{+} $A_1$) \hlg{$\cdot$}  ($B_0$ \hly{+} $B_1$) $= A_0 B_0 + A_0 B_1 + A_1 B_0 + A_1 B_1 = P$\\
+2.) $A_0$  \hlg{$\cdot$} $B_0$\\
+3.) $A_1$  \hlg{$\cdot$} $B_1$\\
+$\Rightarrow (A_0 B_1+ A_1 B_0) = (P$  \hly{-} $(A_0 B_0)$  \hly{-} $(A_1 B_1))$\\
+
+Es verbleiben  \hlg{3} Multiplikationen und \hly{ } Additionen\\
+
+$AB = A_0 B_0$ \hly{+} $(P-(A_0 B_0) - (A_1 B_1))$ \hly{+} $A_1 B_1 2^n$
+
+
+\paragraph{Mastertheoreme}
+\begin{flalign*}
+&T(n) = 3 \cdot T \left(\frac{n}{2} \right) + n&\\
+&a=3,~~~b=2,~~~\alpha=1&\\
+&\log_2(3) > 1~~~\Rightarrow \text{2. Fall}&\\
+&\Rightarrow \Theta \left(n^{\log_2(3)} \right) = \Theta \left(n^{1,5849625} \right)&
+\end{flalign*}
+
+
+\subsection{Akra-Bazzi Theorem}
+
+\paragraph{Beispiel} $T(n) = 2T \left(\frac{n}{2} \right) + \log_2(n)$
+
+\begin{flalign*}
+&T(n)= \begin{cases} 
+      aT\left(\frac{n}{b} \right) + g(n) & n > n_0 \\
+      h(n) & 1 \leq n \leq n_0
+   \end{cases}&\\
+&T(n) = \Theta \left(n^{\alpha} \left(1+ \int_1^n \frac{g(x)}{x^{\alpha+1}} dx \right) \right)~~~\text{mit}~\alpha \text{, so dass gilt:}~\frac{a}{b^{\alpha}} = 1&
+\end{flalign*}
+

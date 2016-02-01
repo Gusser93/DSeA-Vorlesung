@@ -1,0 +1,163 @@
+\usepackage{listings, textcomp, xcolor}
+
+
+\definecolor{Code}{rgb}{0,0,0}
+\definecolor{Keywords}{rgb}{0,0,255}
+\definecolor{Strings}{rgb}{255,0,0}
+\colorlet{Comments}{Green}
+\colorlet{Numbers}{blue}
+
+%%%%%%%%%%%
+%Mache Integer farbig
+%%%%%%%%%%%
+
+\makeatletter
+
+\newif\iffirstchar\firstchartrue
+\newif\ifstartedbyadigit
+
+\newcommand\processletter
+{%
+	\ifnum\lst@mode=\lst@Pmode%
+	\iffirstchar%
+	\global\startedbyadigitfalse%
+	\fi
+	\global\firstcharfalse%
+	\fi
+}
+
+\newcommand\processdigit
+{%
+	\ifnum\lst@mode=\lst@Pmode%
+	\iffirstchar%
+	\global\startedbyadigittrue%
+	\fi
+	\global\firstcharfalse%
+	\fi
+}
+
+\lst@AddToHook{Output}%
+{%
+	\ifstartedbyadigit%
+	\def\lst@thestyle{\color{Numbers}}%
+	\fi
+	\global\firstchartrue%
+	\global\startedbyadigitfalse%
+}
+
+\newtoks\jubo@toks
+\jubo@toks={
+	language=C,
+	commentstyle=\color{Comments}\slshape,
+	stringstyle=\color{Strings},
+	keywordstyle={\color{Keywords}\bfseries},
+	alsoletter=0123456789,
+	SelectCharTable=%
+}
+\def\add@savedef#1#2{%
+	\begingroup\lccode`?=#1\relax
+	\lowercase{\endgroup
+		\edef\@temp{%
+			\noexpand\lst@DefSaveDef{\number#1}%
+			\expandafter\noexpand\csname lsts@?\endcsname{%
+				\expandafter\noexpand\csname lsts@?\endcsname\noexpand#2}%
+		}}%
+		\jubo@toks=\expandafter{\the\expandafter\jubo@toks\@temp}%
+	}
+	\count@=`0
+	\loop
+	\add@savedef\count@\processdigit
+	\ifnum\count@<`9
+	\advance\count@\@ne
+	\repeat
+	\count@=`A
+	\loop
+	\add@savedef\count@\processletter
+	\ifnum\count@<`Z
+	\advance\count@\@ne
+	\repeat
+	\count@=`a
+	\loop
+	\add@savedef\count@\processletter
+	\ifnum\count@<`z
+	\advance\count@\@ne
+	\repeat
+	%\showthe\jubo@toks % for debugging
+	\begingroup\edef\x{\endgroup
+		\noexpand\lstdefinestyle{pseudo}{\the\jubo@toks}
+	}\x
+	
+	\makeatother
+%%%%%%%%%%
+%Ende
+%%%%%%%%%%
+
+
+
+\lstset{
+	literate={ö}{{\"o}}1
+	{ä}{{\"a}}1
+	{ü}{{\"u}}1
+	{ß}{{\ss}}1
+	{/pi}{{$\Pi$}}1
+	{/inf}{{$\infty$}}1
+	{/eIn}{{$\in$}}1
+	{/cup}{{$\cup$}}1
+	{/leer}{{$\emptyset$}}1
+	{<=}{{$\leq$}}1
+	{>=}{{$\geq$}}1
+}
+
+
+\lstset{
+	numberstyle=\tiny,
+	stepnumber=1,
+	numbersep=10pt,
+	xleftmargin=15pt,
+	breaklines=true,
+	numberblanklines=false,
+	showstringspaces=false,
+	flexiblecolumns=true,
+	mathescape=true,
+	tabsize=4,
+	captionpos=b,
+	numbers=left,
+	commentstyle=\color{Green},
+	numberstyle=\color{gray},
+	keywordstyle=\color{blue} \textbf,%otherkeywords={xdata},
+	keywords=[2]{xdata},
+	keywordstyle=[2]\color{red}\textbf,
+	identifierstyle=\color{black},
+	stringstyle=\color{red}\ttfamily,
+	basicstyle = \ttfamily \color{black} \footnotesize,
+	inputencoding=utf8,
+	emph=[1]%
+	{%
+		infinity,
+	}, 
+	emphstyle=[1]{\color{blue}},
+	emph=[2]%
+	{%
+		forall,
+		while,
+		if,
+		else,
+		for,
+		return,
+		new,
+		NULL,
+		null,
+		int, 
+		double, 
+		float,
+		class,
+		void,
+		false, 
+		true,
+		FALSE,
+		TRUE,
+	}, 
+	emphstyle=[2]{\color{Magenta}},
+	emph=[3]{b0, b1, n0, n1},
+	emphstyle=[3]{\color{black}}
+}

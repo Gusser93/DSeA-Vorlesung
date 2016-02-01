@@ -1,0 +1,71 @@
+\chapter{Vorlesung}
+\section{Restnetzwerk $G_f=(V,E_f)$}
+\[ c_f(u,v)=\begin{cases}
+c(u,v)-f(u,v)&\text{für }(u,v)\in E\\
+f(v,u)&\text{für }(v,u)\in E\\
+0 & \text{sonst}
+\end{cases} \]
+\section{Max-Flow-Min-Cut-Theorem}
+\begin{enumerate}
+	\item $|f|$ ist maximal $\Rightarrow$ Es gibt keinen $f$-verbessernden Pfad
+	\item Es gibt einen $(S,T)$-Schnitt, so dass $c(S,T)=|f|$
+	\item $c(S,T) = |f| \Rightarrow f$ ist maximal und $c(S,T)$ minimal
+\end{enumerate}
+\subsection{Beweis: 1. $\Rightarrow$ 2.}
+Gegeben sein ein maximaler Fluss $f\Rightarrow  t$ ist ein $G_f$ nicht von $s$ erreichbar.
+\[ \text{Sei }S=\{ v\in V | \exists~p:~s \rightsquigarrow v \text{ in } G_f \}, T=V\setminus S, t \in T \]
+%Wrap left Dia2
+
+\subsection{Idee}
+\paragraph{Zeige:} Alle Vorwärtskanten über den Schnitt $S,T$ sind saturiert, d.h. $f(u,v)=c(u,v)$ Alle Rückwärtskanten von $T$ nach $S$ tragen den Flusswert $0$.
+
+\paragraph{Beweis}
+Sei $(u,v) \in S\times T \cap E$
+\subparagraph{Anmerkung} $f(u,v) < c(u,v)$
+\[ \Rightarrow (u,v) \in E_f \text{ mit } c_f(u,v)=c(u,v)-f(u,v) > 0 \]
+\[ \Rightarrow v \text{ ist von }s\text{ aus erreichbar:} s\rightsquigarrow u \rightarrow v \lightning \] 
+\begin{align*}
+% \hline
+\end{align*}
+
+\pagebreak
+
+Sei $(v,u) \in T\times S$
+%Wrap left dia3
+\subparagraph{Anmerkung:} $f(v,u)>0$
+\[ \Rightarrow (u,v)\in E_f\text{ mit } c_f(u,v) = f(v,u)>0 \]
+\[ \Rightarrow v \text{ ist auf dem Weg } s\rightsquigarrow u \rightarrow v\text{ in }G_f\text{ erreichbar.}\lightning \]
+\[ |f| = \sum_{u\in S, v \in T}f(u,v) - \sum_{u\in S, v\in T}f(v,u) = \sum_{u\in S, v\in T} c(u,v) - 0 = c(S,T) \]
+\begin{flushright}
+	1. $\Rightarrow$ 2.\\
+	q.e.d.
+\end{flushright}
+\[ |f| = c(S,T) \Rightarrow f\text{ maximal und }c(S,T)\text{ minimal.} \]
+\begin{align*}
+\hline
+\end{align*}
+\paragraph{Offene Frage}
+Unter welchen Bedingungen terminiert der Ford-Fulkerson-Algorithmus?
+\subparagraph{Anmerkung} $c:E\rightarrow \mathbb{N}$ 
+\[\Rightarrow |f^*|\footnote{maximaler Fluss}\in \mathbb{N}, c_{min}(p) \in \mathbb{N} \text{ für }p\text{ flussverbessernder Pfad} \geq 1\]
+\[ \Rightarrow \text{ Es genügen }|f^*|\text{ viele Iterationen zur Flussverbesserung} \]
+\[ \Rightarrow \text{Laufzeit}\mathcal{0}(|f^*|\cdot|E|) \]
+%Grafik 4
+\subsection{Zwick}
+\[ \overline{\phi} = \frac{\sqrt{5}-1}{2}~~X>1000~~|f^*|=2X+1 \]
+%Grafik 5
+%ersterSchritt und Pfade A-C
+\paragraph{Invariante} $\overline{\phi}=0,613\ldots$
+%Grafik 10
+\[1-\overline{\phi}=\overline{\phi}^{~2} \]
+\[ \overline{\phi}^{~k-1}-\overline{\phi}^{~k} = \overline{\phi}^{~k+1} \]
+\paragraph{1. Schritt} Schicke $\overline{\phi}^{~k}$ Flusseinheiten entlang Pfad B
+%Grafik Schritt1
+\paragraph{2. Schritt} Schicke $\overline{\phi}^{~k}$ entlang C
+%Grafik Schritt2
+\paragraph{3. Schritt} Schicke $\overline{\phi}^{~k+1}$ entlang B
+%Grafik Schritt3
+\paragraph{2. Schritt} Schicke $\overline{\phi}^{~k+1}$ entlang A
+%Grafik Schritt4
+Wir iterieren diese 4 Schritte unendlich oft
+\[ |f| = 1+2\cdot\sum_{k=1}^{\infty}\overline{\phi}^{~k}+2\cdot\sum_{k=1}^{\infty}\overline{\phi}^{~k+1}<7\leq 2X+1~~~~~\sum_{k=0}^{\infty}\overline{\phi}^{~k}=\frac{1}{1-\overline{\phi}} \]

@@ -1,0 +1,98 @@
+\chapter{Vorlesung}
+
+
+\section{Landau-Notation}
+
+$g, f : \mathbb{N} \rightarrow \mathbb{N}$
+
+\subsection{$O(n)$}
+\[g(n) \in O(f(n)) \Leftrightarrow c > 0 \land n_0 \in \mathbb{N}, \text{so dass für alle}~n \geq n_0~\text{gilt:} g(n) \leq c \cdot f(n) \Leftrightarrow \lim\limits_{n \rightarrow \infty}{sup \frac{g(n)}{f(n)}} < \infty\]
+\paragraph{Beispiel}
+\[\lim\limits_{n \rightarrow \infty}{\frac{n \log_2(n)}{n^2}} = \lim\limits_{n \rightarrow \infty}{\frac{log_2(n)}{n}} = \lim\limits_{n \rightarrow \infty} {\frac{\frac{\ln(n)}{\ln(2)}}{n}} \stackrel{\text{L' Hopital}}{=} \lim\limits_{n \rightarrow \infty}{\frac{1}{\ln(2)} \cdot \frac{1}{n}} = \frac{1}{\ln(2)} \lim\limits_{n \rightarrow \infty}{\frac{1}{n} = 0}
+\]
+
+
+\subsection{$\Omega(n)$}
+\[g(n) \in \Omega(f(n)) \Leftrightarrow c > 0 \land n_0 \in \mathbb{N}, \text{so dass für alle}~n \geq n_0~\text{gilt:} g(n) \geq c \cdot f(n) \Leftrightarrow \lim\limits_{n \rightarrow \infty}{inf \frac{g(n)}{f(n)}} > 0\]
+\paragraph{Beispiel} $g(n) = n^p~~~~f(n)=n^q~~~~p \geq q$
+\paragraph{Behauptung} $g(n) \in \Omega(f(n))$
+
+\[\lim\limits_{n \rightarrow \infty}{\frac{n^p}{n^q}} = \infty > 0\]
+
+
+\subsection{$\Theta(n)$}
+\[g(n) \in \Theta(f(n)) \Leftrightarrow g(n) \in O(f(n)) \land g(n) \in \Omega(f(n))\]
+\paragraph{Beispiel} $g(n) = n^p + n^{p-1} + c \cdot n^2~~~~~f(n) = n^p$
+\paragraph{Behauptung} $g(n) \in \Theta(f(n))$ \\
+.... Rechnung
+
+\subsection{$o(n)$}
+
+\[g(n) \in o(f(n)) \Leftrightarrow \lim\limits_{n \rightarrow \infty}{\frac{g(n)}{f(n)}} = 0\]
+\paragraph{Beispiel} $g(n) = n \cdot \log_2(n)~~~~f(n) = n^2$\\
+\[\lim\limits_{n \rightarrow \infty}{\frac{g(n)}{f(n)}} = 0~~~\text{siehe oben}\]
+\paragraph{Erklärung} ''g ist asymptotisch gesehen vernachlässigbar gegenüber f.''
+
+\pagebreak
+
+
+\begin{mdframed}
+\subsection{Notation}
+Häufig wird:
+\[~~~~~~~~O(n) = O(n^2) = O(n^2 \cdot \log_2(n))\]
+geschrieben, anstelle von:
+\[~~~~~~~~O(n) \subset O(n^2) \subset O(n^2 \cdot \log_2(n))\]
+Missbrauch der Notation !!!\\
+
+\end{mdframed}
+
+
+\section{Mergesort (Divide and Conquer)}
+
+\subsection{Pseudo-Code}
+\lstinputlisting[language=C, style=pseudo]{03/Code/mergesort.c}
+
+\pagebreak
+
+\subsection{Laufzeitanalyse}
+$T(n) =$ Zahl der von Mergesort durchgeführten Elementarvergleiche $\approx$ Laufzeit 
+\[T(n) = 2T(\frac{n}{2}) + n -1 \approx 2T(\frac{n}{2}) + n ~~~\text{mit}~T(1) = 0\]
+
+\begin{mdframed}
+\paragraph{Korrekter wäre} $T(n) = T(\lfloor \frac{n}{2}  \rfloor) + T(\lceil \frac{n}{2}  \rceil) + n -1~~~$ \hfill Für ungerade Zahlen \\
+
+\end{mdframed}
+
+\begin{flalign*}
+ & T(n) = 2 \cdot 2 T \left(\frac{n}{2} \right) + n \overset{\text{(1)}}{=} 2 \left(\footnote{Unsicher ob diese Klammer, die linke, an der richtigen Stelle ist.} \left( 2 T \left(\frac{n}{4} \right)+ \frac{n}{2} \right) + n \right) = 4 T\left(\frac{n}{4} \right) + 2n& \\
+ &~~~~~~~\stackrel{\text{(2)}}{=} 4 \cdot \left(2T \left(\frac{n}{8}\right) + \frac{n}{4} \right) + 2n = 8T\left(\frac{n}{8} \right) + 3n = ... = 2^i \cdot T \left(\frac{n}{2^i} \right)  + in& \\
+ & & \\
+ & T\left(\frac{n}{2} \right) = 2 T\left(\frac{n}{4}\right) + \frac{n}{2}~~~~~~(1)& \\
+ & T\left(\frac{n}{4} \right) = 2 T\left(\frac{n}{8}\right) + \frac{n}{4}~~~~~~(2)& \\
+ &....& \\
+ & T(1) = 0& 
+\end{flalign*}
+
+
+\paragraph{Rekursionsende} $\frac{n}{2^i} = 1 \Leftrightarrow 2^i = n \Leftrightarrow i = \log_2(n)$\\
+\begin{flalign*}
+&T(n) = 2^{\log_2(n)} T\left(\frac{n}{2^{\log_2(n)}} \right) + n \log_2(n) = n T(1) + \log_2(n) = \log_2(n)&
+\end{flalign*}
+
+
+\paragraph{Abstraktion} \text{} \\
+$T(n) =$ Laufzeit eines Divide \& Conquer Algorithmus der ein Problem dadurch löst, das es in $a$ Teilprobleme der Größe $\frac{n}{b}$ zerlegt wird, die rekursiv gelöst werden und anschließend kombiniert werden.\\
+
+$T(n) = a\cdot T\left(\frac{n}{b} \right) + n^{\alpha} ~~~~~\alpha > 0~~~~~~\text{mit}~T(1) = 0$\\ 
+
+
+\begin{flalign*}
+&T(n) = a T\left(\frac{n}{b}\right) + n^{\alpha}  \stackrel{\text{(1)}}{=} a^2 T\left(\frac{n}{b^2}\right) + a\left(\frac{n}{b}\right)^{\alpha} + n^{\alpha}&\\
+&(1)~~~~~T\left(\frac{n}{b}\right) = a T\left(\frac{n}{b^2}\right) + \left(\frac{n}{b}\right)^{\alpha}  \stackrel{\text{(2)}}{=} a^3 T\left(\frac{n}{b^3}\right) + a^2\left(\frac{n}{b^2}\right)^{\alpha}  + a^1\left(\frac{n}{b^1}\right)^{\alpha} +  a^0\left(\frac{n}{b^0}\right)^{\alpha}&\\
+&(2)~~~~~T\left(\frac{n}{b^2}\right) = a T\left(\frac{n}{b^3}\right) + \left(\frac{n}{b^2}\right)^{\alpha}  = a^i T\left(\frac{n}{b^i}\right) + \sum_{j=0}^{i-1} a^j \left(\frac{n}{b^j}\right)^{\alpha} =  a^i T\left(\frac{n}{b^i}\right) + n^{\alpha} \sum_{j=0}^{i-1} \left(\frac{a}{b^{\alpha}}\right)^j&\\
+&~~\text{mit}~i= \log_b(n) \land x = \frac{a}{b^{\alpha}}&\\
+&...&\\
+&T(1) = 0&
+\end{flalign*}
+
+\pagebreak
