@@ -1,6 +1,6 @@
 %Thema im Praktikum soll dynamische Programmierung werden
-\chapter{Vorlesung}
-\section{Minimal aufspannende Bäume MST}	%Werden 2 Algorithmen machen
+%\chapter{Vorlesung}
+\chapter{Minimal aufspannende Bäume MST}	%Werden 2 Algorithmen machen
 \paragraph{Eingabe}
 \[ G=(V,E)~~E~\text{ungerichtet}~~(u,v)\in E \Rightarrow (v,u)\in E\text{ mögliche Notation } \{ u,v \} \]
 $ w:E\rightarrow \mathbb{R}$
@@ -8,19 +8,19 @@ $ w:E\rightarrow \mathbb{R}$
 \[ \text{Baum }T \subseteq E\]
 \[ G_T=(V,T) \text{zusammenhängend (zykelfrei)} \]
 \[ w(T) = \sum_{e\in T} w(e) \text{minimal} \]
-\begin{figure}
+\begin{figure}[H]
 \centering
-\begin{subfigure}[h]{0.3\textwidth}
+\begin{subfigure}[H]{0.3\textwidth}
 	\includegraphics[width=\linewidth]{19/Grafik/Spannbaum}
 	\caption{Beispiel für einen Spannbaum in einem Graphen}
 	\label{fig:Spannbaum}
 \end{subfigure}
-\begin{subfigure}[h]{0.3\textwidth}
+\begin{subfigure}[H]{0.3\textwidth}
 	\includegraphics[width=\linewidth]{19/Grafik/SpannbaumBeispiel2}
 	\caption{Beispiel für einen Spannbaum}
 	\label{fig:Spannbaum2}
 \end{subfigure}
-\begin{subfigure}[h]{0.3\textwidth}
+\begin{subfigure}[H]{0.3\textwidth}
 	\includegraphics[width=\linewidth]{19/Grafik/Schnittlemma1}
 	\caption{\textcolor{green}{Grün} markiert sind alle Kanten, die von \textcolor{red}{$S$} nach \textcolor{blue}{$\overline{S}$} verlaufen. Wähle die Kante mit dem kleinsten Gewicht, also 2, aus.}
 	\label{fig:Spannbaum3}
@@ -30,10 +30,10 @@ $ w:E\rightarrow \mathbb{R}$
 %Bild1 und 2
 \paragraph{Frage} $|T|= $?
 \paragraph{Antwort} $|T| = |V|-1$
-\subsection{Greedy-Algorithmen zur Lösung des MST-Problems:}
+\section{Greedy-Algorithmen zur Lösung des MST-Problems:}
 Starte mit $T=\emptyset$, nehme sukzessive Kanten zu $T$ hinzu, so dass nach $|V|-1$ Schritten der gesuchte MST entstanden ist. 
 Dabei benötigen wir ein Kriterium, das sicherstellt, dass gewählte Kanten zur Gesamtlösung dazugehören.
-\subsection{Schnitt-Lemma:}
+\section{Schnitt-Lemma:}
 Betrachte eine Aufteilung (Schnitt) der Knotenmenge $V$ in $V$ und $\overline{S} = V\setminus S$ \\und Kanten $(u,v) \in E \cap S\times \overline{S}$\\
 Sei $e \in E \cap S \times \overline{S}$ mit $w(e) \leq w(e') ~\forall ~e' \in E \cap S\times \overline{S}$ dann gibt es einen MST mit $e \in$ MST
 \subsection{Beweis für das Schnitt-Lemma}
@@ -52,11 +52,12 @@ $w(T') \leq w(T) \Rightarrow w(T') = w(T)$ weil $T$ ein MST.
 \begin{flushright}
 	q.e.d.
 \end{flushright}
-\subsection{Algorithmus von Kruskal}
+\section{Algorithmus von Kruskal}
 sortiere Kanten nach ihrem Gewicht aufsteigend\\
 $T=\emptyset$\\
 
-\begin{wrapfigure}{r}{0.5\linewidth}
+\begin{wrapfigure}{R}{0.5\linewidth}
+	\vspace*{-80pt}
 	\centering
 	\includegraphics[width=\linewidth]{19/Grafik/SpannbaumBeispiel3}
 	\caption{Reihenfolge grün$\rightarrow$rot$\rightarrow$blau$\rightarrow$braun}

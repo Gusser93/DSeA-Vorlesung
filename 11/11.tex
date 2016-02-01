@@ -1,5 +1,7 @@
-\chapter{Vorlesung}
-\section{AVL-Bäume von Adelson-Velsky and Landis}
+%\chapter{Vorlesung}
+%\section{AVL-Bäume von Adelson-Velsky and Landis}
+\pagebreak
+\section{Baumtiefe} %Ergänzung von Markus
 \begin{wrapfigure}[2]{l}{0.3\linewidth}
 	\vspace{-50pt}
 \includegraphics[width=\linewidth]{11/Grafik/img1.png}
@@ -40,31 +42,28 @@ $Keys(T_1) < Key(X) < Keys(T_2) < Key(Y) < Keys(T_3)$ \\
 \end{figure}
 
 \begin{wrapfigure}{l}[-18pt]{0.24\textwidth}
-\includegraphics[width=0.9\linewidth]{11/Grafik/img4_doppelRotation_1.png}
+\includegraphics[width=\linewidth]{11/Grafik/img4_doppelRotation_1.png}
 \end{wrapfigure}
 
 $Keys(T_1) < Key(X) < Keys(T_2) < Key(Y) < Keys(T_2^{'}) < Key(Z) < Keys(T_3)$
 
 \begin{figure}
-	\vspace*{-40pt}
-	\begin{subfigure}[H]{0.3\textwidth}
+	\begin{subfigure}[H]{0.29\textwidth}
 		\includegraphics[width=\linewidth]{11/Grafik/img5_doppelRotation_2.png}
 	\end{subfigure}
-	\begin{subfigure}[H]{0.3\textwidth}
+	\begin{subfigure}[H]{0.29\textwidth}
 			\includegraphics[width=\linewidth]{11/Grafik/img6_doppelRotation_3.png}
 	\end{subfigure}
-	\begin{subfigure}[H]{0.4\textwidth}
+	\begin{subfigure}[H]{0.39\textwidth}
 				\includegraphics[width=\linewidth]{11/Grafik/img7_doppelRotation_4.png}
 	\end{subfigure}
-	\caption{Rotationen}
+	\caption{Rotation}
 \end{figure}
 
-%\clearpage
-\newpage
+\clearpage
 
 
 \section{Pseudo-Code}
 \lstinputlisting[language=Java, style = pseudo]{11/Code/Node.java}
 
 \paragraph{Anmerkung:} Die Laufzeit des Einfügens bleibt in $O($Baumtiefe$)$ = $O(\log{n})$. Nur einer der vier Fälle ist notwendig, um die Balance herzustellen. 
-\pagebreak

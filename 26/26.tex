@@ -1,4 +1,11 @@
-\chapter{Vorlesung}
+%\chapter{Vorlesung}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\linewidth]{26/Grafik/Diagramm1}
+\caption{Wiederholung}
+\label{fig:Diagramm1}
+\end{figure}
+
 %Grafik 1 zur Wiederholung
 \section{Edmonds-Karp Algorithmus}
 \[ G=(V,E)~~,c:R\rightarrow\mathbb{R}^+_0,G_F=(V,E_f), G^L_f=(V,E^L_f) \]
@@ -32,6 +39,13 @@ Sei $s\rightsquigarrow u\rightarrow v$ ein kürzester Weg in $G^L_{f'}$.
 \hline
 \end{align*}
 \[ \Rightarrow (u,v)\notin E^L_f\text{ aber } (u,v)\in E^L_{f'} \]
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\linewidth]{26/Grafik/Diagramm2}
+\caption{}
+\label{fig:Diagramm2}
+\end{figure}
+
 %Grafik 2
 d.h. Bei der Flussverbesserung von $f$ zu $f'$ wurde die Kante $(v,u)$ benutzt in $G^L_{f}$.
 \begin{align*}
@@ -45,12 +59,19 @@ d.h. Bei der Flussverbesserung von $f$ zu $f'$ wurde die Kante $(v,u)$ benutzt i
 \subsection{Lemma}
 Eine kante $(u,v)$ kann un den Level-Rest-Netzwerken höchstens $\frac{|V|}{2}$ mal saturiert werden und damit temporär aus dem jeweiligen Rest-Netzwerk verschwinden
 \subsection{Beweis}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\linewidth]{26/Grafik/Diagramm3}
+\caption{}
+\label{fig:Diagramm3}
+\end{figure}
+
 %Grafik 3
 \[ \delta_f(s,v) = \delta_f(s,u)+1 \]
 \[ \delta_{f'}(s,v)=\delta_{f'}(s,u)-1 \]
-\begin{align*}
-\hline
-\end{align*}
+%\begin{align*}
+%\hline
+%\end{align*}
 \[ \delta_f(s,u)=\delta_f(s,v)-1 \leq \delta_{f'}(s,v)-1=\delta_{f'}(s,u)-2 \]
 \[ \Rightarrow \delta_{f'}(s,u)\geq \delta_f(s,u)+2 \]
 \begin{flushright}

@@ -1,17 +1,17 @@
-\chapter{Vorlesung}
-\section{(a,b)-Suchbäume}
+%\chapter{Vorlesung}
+\chapter{(a,b)-Suchbäume}
 Blattorientierte Speicherung der Elemente\\
 Innere Knoten haben mindestens a und höchstens b Kinder und tragen entsprechende Schlüsselwerte, um die Suche zu leiten.
 \paragraph{Beispiel:}%%2 Bilder einfügen
 \[h\hat{=}\text{Tiefe}\Rightarrow ~~ a^h\leq n \leq b^h ~\Rightarrow ~ \log_b n \leq h \leq \log_a n\]
 %Bilder
-\subsection{Aufspaltung bei Einfügen}
+\section{Aufspaltung bei Einfügen}
 %Bilder
-\subsection{Verschmelzen von Knoten beim Löschen}
+\section{Verschmelzen von Knoten beim Löschen}
 %Bilder
 Aufspalte- und Verschmelze-Operationen können sich von der Blattebene bis zur Wurzel kaskadenartig fortpflanzen. Sie bleiben aber auf den Suchpfad begrenzt.\\
 $\Rightarrow$ Umbaukosten sind beschränkt durch die Baumtiefe $=O(\log n)$
-\section{Amortisierte Analyse}
+\chapter{Amortisierte Analyse}
 \paragraph{Beispiel: Binärzähler}
 	\begin{tabular}{lr}
 		$000$& \\
@@ -30,7 +30,7 @@ $\Rightarrow$ Umbaukosten sind beschränkt durch die Baumtiefe $=O(\log n)$
 Von $0$ bis $n$ im Binärsystem zu zählen kostet  $\leq 2n$ Bit-Flips
 \paragraph{Sprechweise:} amortisierte Kosten einer Inkrement-Operation sind $2$\\
 Folge von n-Ops kostet $2n$
-\subsection{Bankkonto-Methode}
+\section{Bankkonto-Methode}
 \[\text{Konto}(i+1)=\text{Konto}(i)-\text{Kosten}(i)+\text{Einzahlung}(i) \]
 \[\sum_{i=1}^{n}\text{Kosten}(i)=\text{tatsächliche Gesamtkosten} = \sum_{i=1}^{n}(\text{Einzahlung}(i)+\text{Konto}(i-\text{Konto}(i+1))\]
 \[=\sum_{i=1}^{n}\text{Einzahlung}(i)+\text{Konto}(1)-\text{Konto}(n+1) \]
@@ -45,7 +45,8 @@ Folge von n-Ops kostet $2n$
 		$1_\text{€}1_\text{€}1_\text{€}$&$=1$\\
 		&$\overline{11}$
 	\end{tabular}
-	\subsubsection{Kontoführungsschema: für Binärzähler}
+	\pagebreak
+	\subsection{Kontoführungsschema: für Binärzähler}
 	1€ pro 1 in der Binärdarstellung\\
 	Jeder Übergang $1_\text{€}\rightarrow0$ kann dann mit dem entsprechenden Euro Betrag auf dieser 1 bezahlt werden.\\
 	Es gibt pro Inkrement Operation nur einen $0\rightarrow1$ Übergang\\
@@ -55,4 +56,3 @@ Folge von n-Ops kostet $2n$
 		\item die neu entstandene $1_\text{€}$ mit einem Euro zu besparen.
 	\end{enumerate}
 	\[\text{GK} = 2(2^k-1)+0\footnote{Zählerstand(000)}-k\footnote{Zählerstand($\overbrace{111\ldots1}^k$)}=2n-k-2\]
-

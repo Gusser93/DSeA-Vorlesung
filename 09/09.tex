@@ -1,11 +1,8 @@
-\newcommand{\hl}[1]{\colorbox{yellow}{#1}}
-
-\chapter{Vorlesung}
-\section{Vergleichsbasierte Sortieralgorithmen}
-
-\subsection{Worst-case Laufzeit}
-
-eines vergleichsbasierten Sortieralgorithmus \\$~\hat{=}~$ maximale Tiefe des zugehörigen Entscheidungsbaums \\$~\hat{=}~$ mittlere Tiefe der Blätter im zugehörigen Entscheidungsbaums\\
+%\chapter{Vorlesung}
+%\section{Vergleichsbasierte Sortieralgorithmen}
+\pagebreak
+\section{Worst-case Laufzeit}
+Worst-case Laufzeit eines vergleichsbasierten Sortieralgorithmus \\$~\hat{=}~$ maximale Tiefe des zugehörigen Entscheidungsbaums \\$~\hat{=}~$ mittlere Tiefe der Blätter im zugehörigen Entscheidungsbaums\\
 
 Sei $T_{max}$ die maximale Baumtiefe in einem binären Baum. 
 Betrachte nun zunächst den vollständigen binären Baum mit \#Blätter $\leq 2$. \\
@@ -14,7 +11,7 @@ Betrachte nun zunächst den vollständigen binären Baum mit \#Blätter $\leq 2$
 \begin{wrapfigure}[1]{l}{0.3\linewidth}
 \vspace{-50pt}
 \includegraphics[width=\linewidth]{09/Grafik/img1.png}
-\caption{}
+\caption{Binärerbaum}
 \end{wrapfigure}
 
 \vspace{30pt}
@@ -29,7 +26,7 @@ $t_{max} \geq \log_2(n!) = \Omega(n \log n) =  \log_2(n!) \leq t_{mean}$
 \[\Rightarrow n! \geq e^{n\ln(n)-n+1} = e \cdot e^{-n} \cdot \left(e^{\ln(n)}\right)^n = e \cdot e^{-n} \cdot n = e\left(\frac{n}{e}\right)^n \] 
 Stirling $n! \approx \sqrt{2 \pi n} (\frac{n}{e})^n$
 
-\newpage
+%\newpage
 
 \subsection{Lemma: Mittlere Tiefe der Blätter in einem Entscheidungsbaum $> \log_2(n)n$}
 
@@ -38,7 +35,7 @@ Stirling $n! \approx \sqrt{2 \pi n} (\frac{n}{e})^n$
 \begin{wrapfigure}[2]{l}{0.3\linewidth}
 \vspace{-50pt}
 \includegraphics[width=\linewidth]{09/Grafik/img2.png}
-\caption{}
+\caption{Induktions-Ansatz}
 \end{wrapfigure}
 
 \vspace{30pt}
@@ -71,30 +68,28 @@ Es folgt somit:
 \[ t_{mean} = \frac{1}{m} \sum_b T_b \geq  \frac{1}{m}\left(m+m\log_2\left( \frac{m}{2}\right)\right) = 1+ \log_2\left( \frac{m}{2}\right) = 1+ \log_2(m) -1 = \log_2(m) \]
 \[q.e.d\]
 
-\newpage
+%\newpage
 
 
-\section{Radix-Sort}
+\chapter{Radix-Sort}
 
-\subsection{Beispiel:}
+\section{Beispiel:}
 \begin{tabular}{l l l l}
-  10\hl{1} & 0\hl{1}0 & \hl{1}00 & 001 \\
-  01\hl{0} & 1\hl{0}0 & \hl{1}01 & 010\\
-  00\hl{1} & 1\hl{1}0 & \hl{0}01 & 011 \\
-  11\hl{1} & 1\hl{0}1 & \hl{0}10 & 100 \\
-  10\hl{0} & 0\hl{0}1 & \hl{1}10 & 101 \\
-  01\hl{1} & 1\hl{1}1 & \hl{1}11 & 110 \\
-  11\hl{0} & 0\hl{1}1 & \hl{0}11 & 111 \\
+  10\hly{1} & 0\hly{1}0 & \hly{1}00 & 001 \\
+  01\hly{0} & 1\hly{0}0 & \hly{1}01 & 010\\
+  00\hly{1} & 1\hly{1}0 & \hly{0}01 & 011 \\
+  11\hly{1} & 1\hly{0}1 & \hly{0}10 & 100 \\
+  10\hly{0} & 0\hly{0}1 & \hly{1}10 & 101 \\
+  01\hly{1} & 1\hly{1}1 & \hly{1}11 & 110 \\
+  11\hly{0} & 0\hly{1}1 & \hly{0}11 & 111 \\
 \end{tabular}
 \paragraph{Wichtig}Beginne die Sortierung mit dem niedrigsten Bit
 
-\subsection{Pseudo-Code}
+\section{Pseudo-Code}
 \lstinputlisting[language=Java, style = pseudo]{09/Code/radixsort.java}
 
 
-\pagebreak
-
-\section{Binäre Suchbäume}
+\chapter{Binäre Suchbäume}
 
 \paragraph{Zahlen} 12, 8, 3, 16, 24, 17, 10, 21, 14, 9 
 

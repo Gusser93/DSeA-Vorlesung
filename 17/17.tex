@@ -1,5 +1,8 @@
-\chapter{Vorlesung}
-\subsection*{Dijkstra Algorithmus (Fortsetzung)}
+%\chapter{Vorlesung}
+%\subsection*{Dijkstra Algorithmus (Fortsetzung)}
+\begin{align*}
+\hline
+\end{align*}
 \[ G=(V,E)~~ w:E\rightarrow \mathbb{R}^{\geq0} \]
 \begin{wrapfigure}{R}{0.3\textwidth}
 	\centering
@@ -29,10 +32,9 @@ while(!PQ.empty()) {
   S = S/cup{u};
 }
 \end{lstlisting}
-
+%\pagebreak
 \paragraph{Satz:}
 Der Dijkstra Algorithmus berechnet alle d-Werte, so dass nach Ablauf des Algorithmus $\forall~v\in V$ gilt: $d[v] = \delta(s,v)$.
-\pagebreak
 \paragraph{Beweis:}
 \subparagraph{Annahme:}
 \[ \exists v\in V:~d[v]\neq\delta(s,v) \]

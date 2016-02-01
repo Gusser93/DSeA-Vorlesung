@@ -1,28 +1,28 @@
-\chapter{Vorlesung}
-\vspace{-30pt}
-\section{Quicksort}
-\vspace{-20pt}
-\subsection{Pseudo-Code}
-\vspace{-30pt}
+%\chapter{Vorlesung}
+%\vspace{-30pt}
+%\section{Quicksort}
+%\vspace{-20pt}
+\section{Pseudo-Code}
+%\vspace{-30pt}
 \lstinputlisting[language=C, style = pseudo]{06/Code/quicksort.c}
-\begin{wrapfigure}[3]{l}{0.7\linewidth}
-\vspace{-70pt}
-\includegraphics[width=\linewidth]{06/Grafik/img1.png}
-\includegraphics[width=\linewidth]{06/Grafik/img2.png}
-\caption{}
-\end{wrapfigure}
+\begin{figure}[H]
+%\vspace{-85pt}
+\centering
+\includegraphics[width=0.7\linewidth]{06/Grafik/img1.png}
+\includegraphics[width=0.7\linewidth]{06/Grafik/img2.png}
+\caption{Quicksort}
+%\vspace{-115pt}
+\end{figure}
 
-\vspace{0pt}
+%\vspace*{85pt}
 \textbf{Schleifen-Invariante:}\\
 $a[k] > p~~\text{für}~~j <k<rechts$\\
 $a[k] \leq p ~~\text{für}~~links<k<i$ 
-\vspace{50pt}
-
-\pagebreak 
+\vspace{5pt}
 
 \subsection{Zufallspermutation}
 \lstinputlisting[language=C, style = pseudo]{06/Code/zufallspermutation.c}
-
+\clearpage
 \begin{mdframed}
 \subsection{Einschub: Stochastik}
 \subsubsection{Fairer Würfel (Erwartungswert):} X sei Zufallsvariable $~\hat{=}~$ Anzahl Augen\\
@@ -51,7 +51,6 @@ Unter der Annahme, dass keine gleich großen Elemente existieren.\\
 \\
 $T(1) = 0 $
 \pagebreak
-
 \paragraph{Lösen durch Einsetzten}
 \[T(n) = n + \frac{2}{n} \sum_{i=1}^n T(i-1) = n + \frac{2}{n} \sum_{i=0}^{n-1} T(i)\]
 \[ \Leftrightarrow n \cdot T(n) = n^2 + 2 \sum_{i=0}^{n-1} T(i) \]
@@ -78,30 +77,26 @@ $T(1) = 0 $
 
 \pagebreak 
 
-\section{Median in Linearzeit}
+\chapter{Median in Linearzeit}
 Median  $~\hat{=}~ \frac{n}{2} $-kleinste Element in einer Folge von n Elementen
 
-\subsection*{Verallgemeinerung}
+\section{Verallgemeinerung}
 Finde das k-t kleinste Elemente in der Folge\\
 
 Naive Strategie: $O(k \cdot n)$
 
 
-\subsection*{Idee} 
+\section{Idee} 
 
 \begin{lstlisting}
 select(int[] a, int k) {}
 \end{lstlisting}
 
-\begin{wrapfigure}[1]{l}{0.6\linewidth}
-\vspace{-25pt}
-\includegraphics[width=\linewidth]{06/Grafik/img5.png}
-\caption{}
-\end{wrapfigure}
-
-\vspace{30pt}
-Aufruf von Partition
-\vspace{90pt}
+\begin{figure}[H]
+	\centering
+\includegraphics[width=0.6\linewidth]{06/Grafik/img5.png}
+\caption{Aufruf von Partition}
+\end{figure}
 
 \paragraph{1. Fall} $k=i \Rightarrow$ Pivotelement war gesucht
 \paragraph{2. Fall} $k<i \Rightarrow$ suche rekursiv das k-t kleinste Element in L 

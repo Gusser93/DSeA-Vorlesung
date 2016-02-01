@@ -1,14 +1,18 @@
-\chapter{Vorlesung}
-\section{All-Pairs-Shortest Path Algorithmen}
+%\chapter{Vorlesung}
+\chapter{All-Pairs-Shortest Path Algorithmen}
+\section{Allgemein} %Ergänzung von Markus Vieth
 Distanzmatrix $D$ für einen Graphen $G=(V,E)~~V={v_1,v_2,\ldots,v_n},~~w:E\mapsto\mathbb{R}$
 \[ d_{ij}=\begin{cases}0&\text{für }i=j\\w(v_i,v_j)&\text{für }(v_i,v_j)\in E\\ \infty &\text{sonst}\end{cases} \]
 \[D=(d_{ij})_{\substack{i=1,\ldots,n \\ j=1,\ldots, n}} \in \mathbb{R}^{n\times n}  \]
-\begin{figure}[h]
+$ $
+\begin{wrapfigure}{r}{0.4\linewidth}
+	\vspace*{-100pt}
 \centering
-\includegraphics[width=0.2\linewidth]{18/Grafik/Diagramm1}
+\includegraphics[width=0.5\linewidth]{18/Grafik/Diagramm1}
 \caption{Grafik}
 \label{fig:Diagramm1}
-\end{figure}
+\end{wrapfigure}
+$ $
 \[ d^{(2)}_{ij} = \min(d^{(1)}_ij,~\underset{k=1,\ldots,n}{\min(d^{(1)}_{ik}+d^{(1)}_kj)}) \]
 \[ D^{(2)} = D^{(1)}\circ D^{(1)}~~~~~=\min(d^{(1)}_{ik}+d^{(1)}_kj) \]
 Vergleich zu Matrixmultiplikation

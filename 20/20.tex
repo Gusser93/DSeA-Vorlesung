@@ -1,19 +1,21 @@
-\chapter{Vorlesung}
-\subsection{Einfache Union-Find-Datenstruktur}
+%\chapter{Vorlesung}
+\section{Einfache Union-Find-Datenstruktur}
 \begin{tabular}{c|c|c|c|c|c|}
 	    &$0$&$1$&$2$&        &$n-1$\\ \hline
 	ref &$0$&$1$&$2$&$\ldots$&$n-1$\\ \hline
 	size&$1$&$1$&$1$&$\ldots$&  $1$\\ \hline
 	next&$-1$&$-1$&$-1$&$\ldots$&$-1$\\ \hline	
 \end{tabular}
-$n=|V|$\\
+$~~~n=|V|$\\
 
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\vspace{200pt}
 	\centering
 	\includegraphics[width=\linewidth]{20/Grafik/img1}
+	\vspace*{-500pt}
 \end{wrapfigure}
-\begin{lstlisting}
+$ $\\
+\begin{lstlisting}[breaklines=false]
 class Partition
 	int[] ref,size,next;
 	Partiotion(int n) {
@@ -50,12 +52,12 @@ class Partition
 \end{lstlisting}
 %Grafik1 eigentlich bei line 33
 
-\subsubsection{Laufzeit Kruskal}
+\subsection{Laufzeit Kruskal}
 \[ \mathcal{O}(|E|\cdot\log|V|+|E|+|V|\cdot\log|V|) \]
 \[ \mathcal{O}(|E|\cdot\log|V|) \]
 \pagebreak
-\subsection{Prim-Algorithmus zur Berechnung eines MST}
-
+\section{Prim-Algorithmus zur Berechnung eines MST}
+$  $
 %Grafik 2 und 3
 \begin{figure}[H]
 \centering
@@ -69,7 +71,7 @@ class Partition
 	\[ T_{MST}=\{ (v,\pi(v))~|~v\in V\setminus\{ s \} \]
 \end{subfigure}
 \end{figure}
-
+$ $
 \begin{lstlisting}
 PriotityQueue PQ;
 forall(v $\in$ V) {
@@ -98,10 +100,9 @@ while(!PQ.empty()) {
 
 
 \pagebreak
-
-\subsubsection{Korrektheit des Prim-Algorithmus}
+\subsection{Korrektheit des Prim-Algorithmus}
 Korrektheit von Prim folgt unmittelbar aus dem Schnitt-Lemma, denn der Algorithmus stellt sicher, dass stets eine Kante gewählt wird, die mit minimalem Gewicht über den Schnitt $(S,\overline{S})$ führt.
-\subsubsection{Laufzeit des Prim-Algoritmus}
+\subsection{Laufzeit des Prim-Algoritmus}
 \begin{tabular}{ll}
 	$|V|\times$\texttt{PQ.insert}&$\mathcal{O}(1)$\\
 	$|V|\times$\texttt{PQ.empty}&$\mathcal{O}(1)$\\
@@ -110,11 +111,11 @@ Korrektheit von Prim folgt unmittelbar aus dem Schnitt-Lemma, denn der Algorithm
 \end{tabular}
 In Summe $\mathcal{O}(|E|+|V|\cdot\log|V|)$
 
-\newpage
+%\newpage
 \subsection{Beispiel des Prim-Algorithmus:}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.65\linewidth]{20/Grafik/BspPrim}
+	\includegraphics[width=\linewidth]{20/Grafik/BspPrim}
 	\caption{}
 \end{figure}
 

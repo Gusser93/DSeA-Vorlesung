@@ -1,3 +1,5 @@
+﻿#####################################
+####Latex Zeug####
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -6,7 +8,6 @@
 *.fls
 *.out
 *.toc
-*.fmt
 
 ## Intermediate documents:
 *.dvi
@@ -33,6 +34,8 @@
 *.pdfsync
 
 ## Auxiliary and intermediate files from other packages:
+
+
 # algorithms
 *.alg
 *.loa
@@ -47,9 +50,6 @@ acs-*.bib
 *.nav
 *.snm
 *.vrb
-
-# cprotect
-*.cpt
 
 #(e)ledmac/(e)ledpar
 *.end
@@ -122,10 +122,6 @@ _minted*
 *.sympy
 sympy-plots-for-*.tex/
 
-# pdfcomment
-*.upa
-*.upb
-
 #pythontex
 *.pytxcode
 pythontex-files-*/
@@ -144,16 +140,47 @@ pythontex-files-*/
 # xindy
 *.xdy
 
-# xypic precompiled matrices
-*.xyc
-
 # WinEdt
 *.bak
 *.sav
 
-# endfloat
-*.ttt
-*.fff
+#####################
+#Dia Zeug
+*.dia~
+*.autosave
 
-# Latexian
-TSWLatexianTemp*
+###############################
+#Mac Zeug
+.DS_Store
+#Windows Zeug
+*.ini
+Thumbs.db
+_Bücher
+
+###############################
+##Java Zeug
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+###########################
+#IntelliJ Zeug
+.idea/
+*.iml
+out/
+lwjgl/
+lwjgl
+*/lwjgl
+*/lwjgl/
+*/lwjgl/*
+lwjgl*
+_*

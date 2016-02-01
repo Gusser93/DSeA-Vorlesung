@@ -1,7 +1,5 @@
-\chapter{Vorlesung}
-
-\section{Akra-Bazzi}
-
+%\section{Akra-Bazzi}
+\section{Das Theorem}
 \begin{flalign*}
 &T(n) = a \cdot T \left(\frac{n}{b} \right) + g(n)&\\
 &T(1) = c&\\
@@ -9,7 +7,7 @@
 &\text{z.B. }T(n) = 2+ \frac{n}{2} + \log(n)&
 \end{flalign*}
 
-\subsection*{Beweisidee}
+\section{Beweisidee}
 \begin{flalign*}
 &T(\frac{n}{b}) = a T(\frac{n}{b^2}) + g(\frac{n}{b})&\\
 &T\left(n\right) = a \left(aT\left(\frac{n}{b^2}\right) + g\left(\frac{n}{b}\right)\right) + g\left(n\right) = a^2 + \frac{n}{b^2} + a^1g\left(\frac{n}{b^1}\right) + a^0g\left(\frac{n}{b^0}\right)&\\
@@ -33,11 +31,10 @@
 &q.e.d&
 \end{flalign*}
 
-\pagebreak
 
-\section{Lineare Rekursionsgleichungen}
+\chapter{Lineare Rekursionsgleichungen}
 
-\subsection{Fibonacci-Zahlen}
+\section{Fibonacci-Zahlen}
 
 \begin{wrapfigure}[0]{r}{0.5\linewidth}
 \vspace{20pt}
@@ -58,7 +55,7 @@
 \vspace{20pt}
 
 
-\subsection{Methode der erzeugenden Funktionen}
+\section{Methode der erzeugenden Funktionen}
 \[F(Z) = \sum_{n=0}^{\infty} f_n Z^n = f_0 \cdot Z^0 + f_1 \cdot Z^1 + \sum_{n=2}^{\infty} \left(f_{n-1} + f_{n-2} \right) \cdot Z^n \]
 \[=Z+\sum_{n=2}^{\infty} f_{n-1} Z^n + \sum_{n=2}^{\infty} f_{n-2} Z^n\]
 \[=Z + Z \sum_{n=2}^{\infty} f_{n-1} Z ^{n-1} + Z^2 \sum_{n=2}^{\infty} f_{n-2} Z^{n-2}\]
@@ -86,7 +83,6 @@ $\Leftrightarrow Z_{1/2} = -\frac{1}{2} \pm \frac{\sqrt{5}}{2}$ 	& $\overline{\p
 $\Rightarrow Z^2+ Z + 1 = (Z + \phi)(Z+\overline{\phi}) $		& \text{}
 \end{tabular}
 
-\pagebreak
 
 
 \subsection{Partialbruchzerlegung}
@@ -105,11 +101,11 @@ $\Rightarrow Z^2+ Z + 1 = (Z + \phi)(Z+\overline{\phi}) $		& \text{}
 \[=\frac{1}{\sqrt{5}} \left(\sum_{n=0}^{\infty} \left(\phi Z\right)^n - \sum_{n=0}^{\infty} \left(\overline{\phi} Z\right)^n\right) = \sum_{n=0}^{\infty} \frac{1}{\sqrt{5}} \left(\phi^n - \overline{\phi}^n\right) \cdot Z^n\]
 \[f_n = \frac{1}{\sqrt{5}} \left(\phi^n - \overline{\phi}^n\right) ~~~\text{mit}~\phi = 1,681...~~~\overline{\phi} = -0,681...\]
 
-\section{Quicksort (Divide and Conquer)}
+\chapter{Quicksort (Divide and Conquer)}
 
 \begin{figure}[h]
 \includegraphics[width=0.6\linewidth]{05/Grafik/img1.png}
-\caption{Quicksort (Ablauf)}
+\caption{Quicksort}
 \end{figure}
 
 $\Rightarrow $ Tausche 15 mit 10 \\

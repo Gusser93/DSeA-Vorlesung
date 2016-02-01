@@ -1,18 +1,18 @@
-\chapter{Vorlesung}
+%\chapter{Vorlesung}
 
 
-\section{Landau-Notation}
+\chapter{Landau-Notation}
 
 $g, f : \mathbb{N} \rightarrow \mathbb{N}$
 
-\subsection{$O(n)$}
+\section{$O(n)$}
 \[g(n) \in O(f(n)) \Leftrightarrow c > 0 \land n_0 \in \mathbb{N}, \text{so dass für alle}~n \geq n_0~\text{gilt:} g(n) \leq c \cdot f(n) \Leftrightarrow \lim\limits_{n \rightarrow \infty}{sup \frac{g(n)}{f(n)}} < \infty\]
 \paragraph{Beispiel}
 \[\lim\limits_{n \rightarrow \infty}{\frac{n \log_2(n)}{n^2}} = \lim\limits_{n \rightarrow \infty}{\frac{log_2(n)}{n}} = \lim\limits_{n \rightarrow \infty} {\frac{\frac{\ln(n)}{\ln(2)}}{n}} \stackrel{\text{L' Hopital}}{=} \lim\limits_{n \rightarrow \infty}{\frac{1}{\ln(2)} \cdot \frac{1}{n}} = \frac{1}{\ln(2)} \lim\limits_{n \rightarrow \infty}{\frac{1}{n} = 0}
 \]
 
 
-\subsection{$\Omega(n)$}
+\section{$\Omega(n)$}
 \[g(n) \in \Omega(f(n)) \Leftrightarrow c > 0 \land n_0 \in \mathbb{N}, \text{so dass für alle}~n \geq n_0~\text{gilt:} g(n) \geq c \cdot f(n) \Leftrightarrow \lim\limits_{n \rightarrow \infty}{inf \frac{g(n)}{f(n)}} > 0\]
 \paragraph{Beispiel} $g(n) = n^p~~~~f(n)=n^q~~~~p \geq q$
 \paragraph{Behauptung} $g(n) \in \Omega(f(n))$
@@ -20,20 +20,18 @@ $g, f : \mathbb{N} \rightarrow \mathbb{N}$
 \[\lim\limits_{n \rightarrow \infty}{\frac{n^p}{n^q}} = \infty > 0\]
 
 
-\subsection{$\Theta(n)$}
+\section{$\Theta(n)$}
 \[g(n) \in \Theta(f(n)) \Leftrightarrow g(n) \in O(f(n)) \land g(n) \in \Omega(f(n))\]
 \paragraph{Beispiel} $g(n) = n^p + n^{p-1} + c \cdot n^2~~~~~f(n) = n^p$
 \paragraph{Behauptung} $g(n) \in \Theta(f(n))$ \\
 .... Rechnung
 
-\subsection{$o(n)$}
+\section{$o(n)$}
 
 \[g(n) \in o(f(n)) \Leftrightarrow \lim\limits_{n \rightarrow \infty}{\frac{g(n)}{f(n)}} = 0\]
 \paragraph{Beispiel} $g(n) = n \cdot \log_2(n)~~~~f(n) = n^2$\\
 \[\lim\limits_{n \rightarrow \infty}{\frac{g(n)}{f(n)}} = 0~~~\text{siehe oben}\]
 \paragraph{Erklärung} ''g ist asymptotisch gesehen vernachlässigbar gegenüber f.''
-
-\pagebreak
 
 
 \begin{mdframed}
@@ -47,14 +45,13 @@ Missbrauch der Notation !!!\\
 \end{mdframed}
 
 
-\section{Mergesort (Divide and Conquer)}
+\chapter{Mergesort (Divide and Conquer)}
 
-\subsection{Pseudo-Code}
+\section{Pseudo-Code}
 \lstinputlisting[language=C, style=pseudo]{03/Code/mergesort.c}
 
-\pagebreak
 
-\subsection{Laufzeitanalyse}
+\section{Laufzeitanalyse}
 $T(n) =$ Zahl der von Mergesort durchgeführten Elementarvergleiche $\approx$ Laufzeit 
 \[T(n) = 2T(\frac{n}{2}) + n -1 \approx 2T(\frac{n}{2}) + n ~~~\text{mit}~T(1) = 0\]
 

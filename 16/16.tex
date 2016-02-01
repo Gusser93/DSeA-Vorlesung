@@ -1,5 +1,5 @@
 \setlength{\headheight}{-50pt}
-\chapter{Vorlesung}
+%\chapter{Vorlesung}
 \vspace{-40pt}
 \begin{figure}[H]
 \centering
@@ -10,13 +10,13 @@
 \end{figure}
 \clearpage
 \setlength{\headheight}{0pt}
-\subsubsection{Definition: Länge kürzesten Weges}
+\subsection{Definition: Länge kürzesten Weges}
 $\delta(s,v)=$ Länge eines kürzesten Weges vom Startknoten $s$ zum Knoten $v$.\\
 Setze $\delta(s,v)=\infty$, falls v nicht erreichbar von s aus.
-\subsubsection{Satz: Richtigkeit des Algorithmus}
+\subsection{Satz: Richtigkeit des Algorithmus}
 Nach Ablauf von BFS\footnote{Breitensuche} gilt 
 \[ \forall v\in V: ~ d[v]=\delta(s,v) \]
-\subsubsection{Lemma 1: Dreiecksungleichung für kürzeste Wege}
+\subsection{Lemma 1: Dreiecksungleichung für kürzeste Wege}
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\linewidth]{16/Grafik/Dreiecksungleichung}
@@ -24,7 +24,7 @@ Nach Ablauf von BFS\footnote{Breitensuche} gilt
 \label{fig:Dreiecksungleichung}
 \end{figure}
 
-\subsubsection{Lemma 2}
+\subsection{Lemma 2}
 Zu jedem Zeitpunkt im Verlauf von BFS gilt:
 \[ \forall v\in V:~ d[v] \geq \delta(s,v)\]
 \subsubsection{Beweis (induktiv über Zahl der Operationen, die d-Wert verändern)}
@@ -32,7 +32,7 @@ Zu jedem Zeitpunkt im Verlauf von BFS gilt:
 \paragraph{Induktions-Schritt} Knoten $v$ wird von $u$ aus neu entdeckt
 \[ d[u]\geq \delta(s,u) \]
 \[ d[v] = d[u]+1 \geq \delta(s,u)+1 \overset{D.U.}{\geq} \delta(s,v) \]
-\subsubsection{Lemma 3}
+\subsection{Lemma 3}
 Sei $Q=(v_1,v_2,\ldots,v_k)$ eine Queue, dann gilt stets:
 \[ d[v_1]\leq d[v_2]\leq\ldots\leq d[v_k]\leq d[v_1]+1 \]
 \subsubsection{Beweis (induktiv über die Zahl der push- und pop-Operationen)}
@@ -48,7 +48,7 @@ Beachte Kante $(u,v)$ $v$ ist weiß
 \[ d[v_{k+1}] = d[v_1]+1 \]
 Zustand von Q nach push
 \[ d[v_2 \leq d[v_3] \leq\ldots\leq d[v_k]\leq d[v_1]+1 = d[v_{k+1}]~~\surd \]
-\subsubsection{Satz: Richtigkeit des Algorithmus}
+\subsection{Satz: Richtigkeit des Algorithmus}
 Nach Ablauf von BFS\footnote{Breitensuche} gilt 
 \[ \forall v\in V: ~ d[v]=\delta(s,v) \]
 \subsubsection{Beweis durch Widerspruch}
@@ -74,7 +74,7 @@ $d[u]\leq d[u']$, weil $u$ vor $u'$ aus $Q$ entfernt $\lightning$
 \begin{flushright}
 	q.e.d.
 \end{flushright}
-\section{Kürzeste Wege Algorithmen}
+\chapter{Kürzeste Wege Algorithmen}
 \section{Dijkstra-Algorithmus}
 \[ G=(V,E)~~w:E\rightarrow \mathbb{R}^+_0 \]
 \begin{figure}[h]

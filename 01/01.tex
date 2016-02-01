@@ -1,6 +1,6 @@
-\part{Sortieren}
-\chapter{Vorlesung}
-\section{Bubblesort}
+%\Vorlesung 1
+\part{Sortieren und Suchen}
+\chapter{Bubblesort}
 
 
 \begin{figure}[H]
@@ -11,7 +11,7 @@
 \end{figure}
 
 
-\subsection{Pseudocode}
+\section{Pseudocode}
 \begin{lstlisting}[style = pseudo]
 void bubblesort (int[] a) {
   int n = a.length;
@@ -32,7 +32,7 @@ void bubblesort (int[] a) {
 
 \pagebreak
 
-\subsection{Laufzeitanalyse}
+\section{Laufzeitanalyse}
 
 $T(n) =$ Zahl der durchgeführten Elementvergleiche für eine Eingabemenge von n Elementen\\
 
@@ -66,7 +66,7 @@ $T(n) =$ Zahl der durchgeführten Elementvergleiche für eine Eingabemenge von n
 
 
 
-\section{Heapsort}
+\chapter{Heapsort}
 \label{sec:heapsort}
 
 \paragraph{z.B.} \begin{tabular}{ccccccccccccccc}
@@ -75,7 +75,7 @@ $T(n) =$ Zahl der durchgeführten Elementvergleiche für eine Eingabemenge von n
 
 %hier dürfen gerne noch die einzelnen Schritte als Grafik eingefügt werden
 
-\subsection*{Skizze}
+\section{Skizze}
 \begin{figure}[h]
 %\begin{center}
 \includegraphics[width=0.3\linewidth]{01/Grafik/heap1.png}
@@ -84,9 +84,8 @@ $T(n) =$ Zahl der durchgeführten Elementvergleiche für eine Eingabemenge von n
 %\end{center}
 \end{figure}
 
-\newpage
 
-\subsection*{Indices innerhalb der Baumstruktur}
+\subsection{Indices innerhalb der Baumstruktur}
 \begin{flalign*}
 &\lfloor \frac{i-1}{2} \rfloor&
 \end{flalign*}
@@ -99,7 +98,7 @@ $T(n) =$ Zahl der durchgeführten Elementvergleiche für eine Eingabemenge von n
 \end{figure}
 
 
-\subsection*{Heap-Eigenschaft}
+\section{Heap-Eigenschaft}
 
 \begin{figure}[h]
 \begin{center}
@@ -111,7 +110,7 @@ $x \geq z$
 \end{figure}
 
 
-\subsection{Idee}
+\section{Idee}
 \paragraph{Phase 1} Stelle die Heap-Eigenschaft überall her\\
 $\Rightarrow$ größtes Element steht in der Wurzel
 \paragraph{Phase 2} Tausche Wurzel mit letztem Feldelement\\

@@ -1,9 +1,10 @@
-\chapter{Vorlesung}
-\section{Priority-Queue mittels Fibonacci-Heaps (Fortsetzung)}
-\subsection{Lemma}
+%\chapter{Vorlesung}
+%\section{Priority-Queue mittels Fibonacci-Heaps (Fortsetzung)}
+\section{Eigenschaften} %Ergänzung von Markus Vieth
+\subsection{Lemma: Knotenanzahl im Unterbaum}
 Für jeden Knoten $x$ in einem Fibonacci-Heap gilt, dass die Zahl aller Knoten im Unterbaum von $x$ mindestens $\Phi^k$ beträgt, wobei $k = \grad(x)$.
 \subsection{Beweis}
-\begin{wrapfigure}{L}{0.5\linewidth}
+\begin{wrapfigure}{L}{0.4\linewidth}
 	\centering
 	\includegraphics[width=\linewidth]{22/Grafik/Diagramm1}
 	\caption{Schaubild zum Beweis}
@@ -17,14 +18,18 @@ Sei $S_k$ die Mindestanzahl von Knoten in einem Unterbaum eines Knoten $x$ vom G
 \[ S_k \geq 1+1+\sum_{i=2}^{k} S_{i-2} \]
 Wir zeigen
 \[ S_k\overset{(2)}{\geq} f_{k+2}\footnote{$k-2$-te Fibonacci Zahl}\overset{(1)}{\geq}\Phi^k \]
-
-\begin{wraptable}[-5]{R}{0.3\linewidth}
+\begin{wraptable}{r}{0.7\linewidth}
+	\vspace*{-30pt}
 	\centering
+	{\footnotesize
 	\begin{tabular}{ccccccc}
 		$f_0$&$f_1$&$f_2$&$f_3$&$f_4$&$f_5$&$\ldots$\\
 		$0$&$1$&$1$&$2$&$3$&$5$& 
 	\end{tabular}
+}
+\vspace*{-200pt}
 \end{wraptable}
+$ $\\
 \paragraph{(1)}
 \[ f_{k+2}\geq \Phi^k \]
 \[ k=0~:~ f_2=1\geq\Phi^0=1 \]
@@ -52,7 +57,7 @@ Aus dem Lemma folgt, dass in einem Fibonacci-Heap für $n$\footnote{$\Phi^k\leq 
 
 \pagebreak
 
-\subsection{Satz}
+\subsection{Satz: Kosten der Operationen}
 Mit einem Fibonacci-Heap lassen sich die Operationen \texttt{insert}, \texttt{deleteMin} und \texttt{decreaseKey} mit folgenden amortisierten Kosten realisieren:\\
 \begin{tabular}{ll}
 	\texttt{insert}&$\mathcal{O}(1)$\\

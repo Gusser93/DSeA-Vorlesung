@@ -1,4 +1,7 @@
-\chapter{Vorlesung}
+%\chapter{Vorlesung}
+\begin{align*}
+\hline
+\end{align*}
 Ohne Beweis (siehe später Edmonds-Krap-Algorithmus) gilt:\\
 Die Zeit der Schichten im Levelnetzgraph des Hopcraft-Karp-Algorithmus steigt mindestens um eins von Durchlauf zu Durchlauf.
 \[ |M^*|-|M|\leq\footnote{Lemma von Berge} \frac{|V|}{k}~~~~\tilde{G}=(V_1\cup V_2, M\oplus M^*) \]
@@ -12,8 +15,10 @@ Weitere $\frac{|V|}{k}$ Schleifendurchläufe genügen, um zum Maximum-Matching $
 \subsection{Gesamtzahl der Schleifendurchläufe}
 \[ S(k)=k+\frac{|V|}{k}~~S'(k)=1-\frac{|V|}{k^2}=0\Rightarrow k=\sqrt{|V|} \]
 $\Rightarrow$ Zahl der Schleifendurchläufe $\leq \sqrt{|V|}$
-\section{Algorithmen zur Berechnung maximaler Flüsse}
+\chapter{Algorithmen zur Berechnung maximaler Flüsse}
+\section{Allgemein}
 \begin{wrapfigure}{l}{0.4\linewidth}
+	\vspace*{-20pt}
 	\centering
 	\includegraphics[width=\linewidth]{24/Grafik/Diagramm1}
 	\caption{...}
@@ -24,9 +29,11 @@ $ $
 Gesucht:
 \[ f:E\rightarrow\mathbb{R}^+_0 \]
 \[ \forall (u,v)\in E : \text{Kapazitätsbedingung: } 0\leq f(u,v)\leq c(u,v) \]
-\pagebreak
+\vspace*{5pt}
+%\pagebreak
 \subsection{Flusserhaltung}
 \begin{wrapfigure}{l}{0.3\linewidth}
+	\vspace*{-20pt}
 	\centering
 	\includegraphics[width=\linewidth]{24/Grafik/Diagramm2}
 	\caption{Flusserhalt}
@@ -38,24 +45,26 @@ Gesucht:
 \[ (u,v) \notin E \Rightarrow c(u,v) = 0 \Rightarrow f(u,v) = 0 \]
 \[ (u,v) \in E \Rightarrow (v,u) \notin E~~~\text{Konventionen} \]
 \begin{figure}[H]
+	\begin{subfigure}[H]{0.5\linewidth}
 \centering
-\includegraphics[width=0.7\linewidth]{24/Grafik/Diagramm3}
+\includegraphics[width=\linewidth]{24/Grafik/Diagramm3}
 \caption{Kapazität}
 \label{fig:Diagramm3}
-\end{figure}
-\begin{figure}[H]
+\end{subfigure}
+\begin{subfigure}[H]{0.4\linewidth}
 	\centering
-	\includegraphics[width=0.7\linewidth]{24/Grafik/Diagramm4}
+	\includegraphics[width=1\linewidth]{24/Grafik/Diagramm4}
 	\caption{Beispiel für einen Fluss}
 	\label{fig:Diagramm4}
+\end{subfigure}
 \end{figure}
 
 
-\subsection{Definition}
+\subsection{Definition: Fluss}
 $|f| \hat{=}$ Fluss, der von $s$ nach $t$ transportiert wird.
 \[ |f| = \sum_{v\in V} f(s,v) - \sum_{v\in V} f(v,s) = \sum_{v\in V} f(v,t) - \sum_{v\in V} f(t,v) \]
 \paragraph{Gesucht:} maximaler Fluss $|f|$
-\pagebreak
+%\pagebreak
 \subsection{Definition: Schnitt $(S,T)$}
 \begin{wrapfigure}{l}{0.5\linewidth}
 	\centering

@@ -1,5 +1,5 @@
-\chapter{Vorlesung}
-\section{Priority-Queue mittels Fibonacci-Heaps}
+%\chapter{Vorlesung}
+\chapter{Priority-Queue mittels Fibonacci-Heaps}
 %Grafik1
 \begin{figure}[h]
 	\centering
@@ -22,14 +22,14 @@ $n=4$:&  1 &    &  4 &    &  6 &    &  4 &    &  1\\\noalign{\smallskip\smallski
 \end{tabular}
 
 
-\subsection{Operationen eines Binomial-Heaps}
+\section{Operationen eines Binomial-Heaps}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.65\linewidth]{21/Grafik/Aufbau}
 	\caption{Aufbau}
 \end{figure}
-
+$ $\\
 \begin{itemize}
 	\item \texttt{insert}
 	\item \texttt{deleteMin}
@@ -64,7 +64,7 @@ Wir können davon ausgehen, dass wir den betroffenen Knoten kennen. Falls der er
 \caption{decreaseKey-Operation}
 \end{figure}
 
-\subsubsection{Konsolidierung der Wurzelliste}
+\subsection{Konsolidierung der Wurzelliste}
 Nach dem "`Lazy Evaluation"'-Prinzip wird dieser Vorgang nur nach einem \texttt{deleteMin} angestoßen, um die Wurzelliste zu verkürzen. Wir nutzen ein einfaches Feld hinreichender Größe, um temporär Knoten, entsprechend ihren Grades, zu verwalten. Wir durchlaufen die Wurzelliste. Wenn wir einen Knoten vom Grad $k$ antreffen, schreiben wir ihn in das Feld an Position $k$ bzw. verschmelzen ihn mit dem Knoten von Grad $k$, den wir dort antreffen. Dadurch entsteht gegebenenfalls ein neuer Knoten vom Grad $k+1$ der an Position $k+1$ im Feld zu setzen ist. Es kann also zu weiteren Fusionsoperationen kommen. Analogie zu der Übertragungsfortpflanzung beim Binärzähler.
 
 \begin{figure}[H]

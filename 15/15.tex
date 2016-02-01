@@ -1,4 +1,4 @@
-\chapter{Vorlesung}
+%\chapter{Vorlesung}
 Bei $n$ Elementen sollte die Hashtabelle $m=n^2$ groß sein.\\
 Für die universellen Hashfunktionen \[\mathcal{H}_{p,m} = \{ h_{a,b}(k)=(a\cdot k + b) \mod{p} \mod{m}| 0<a<p,~0\leq b < p \}\]\\
 $\binom{n}{1}$ Schlüsselpaare $(k,l)$ mit $k \neq l$
@@ -15,7 +15,7 @@ Zweistufiges Verfahren:
 \label{fig:PHsching}
 \end{figure}
 \part{Graphen-Algorithmen}
-\subsection{Einführung}
+\chapter{Einführung}
 \[ G=(V,E)~~~V\text{ vertices, }E\text{ edges}~~~E\subseteq V \times V \]
 
 \begin{figure}[H]
@@ -27,7 +27,7 @@ Zweistufiges Verfahren:
 
 Planare Graphen können ohne Überkreuzung der Kanten in die Ebene eingebettet werden.
 
-\subsubsection{Eulerische Polyederformel}
+\section{Eulerische Polyederformel}
 \begin{wrapfigure}{r}{0.25\linewidth}
 	\centering
 	\includegraphics[width=\linewidth]{15/Grafik/Polyeder}
@@ -57,7 +57,7 @@ Es gilt:
 \label{fig:GerichteterGraph2}
 \end{figure}
 
-\subsubsection{Adjazenzmatrix}
+\section{Adjazenzmatrix}
 \begin{tabular}{|c|cccccccccccccc|}
 	\hline
 	  &0&1&2&3&4&5&6&7&8&9&10&11&12&13 \\ \hline
@@ -79,7 +79,7 @@ Es gilt:
 \end{tabular}$= A$
 \[ a\in B^{|V|\times |V|} \]
 falls $G$ ungerichtet $\Rightarrow A = A^T$
-\subsubsection{Adjazenzlisten Repräsentation}
+\section{Adjazenzlisten Repräsentation}
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.4\linewidth]{15/Grafik/Liste}
@@ -97,7 +97,8 @@ falls $G$ ungerichtet $\Rightarrow A = A^T$
 \label{fig:deg}
 \end{figure}
 
-\subsection{BFS (Breadth-First Search) Breitensuche}
+\chapter{BFS (Breadth-First Search) Breitensuche}
+\section{Pseudo-Code} %Ergänzung von Markus
 \paragraph{Initialisierung}
 \begin{lstlisting}[language=C, style = pseudo]
 forall (v in V\{S}) {
@@ -140,7 +141,7 @@ while(!Q.empty()) {
 }
 \end{lstlisting}
 
-\paragraph{Laufzeit}
+\section{Laufzeit} %Ergänzung von Markus, vorher \paragraph{Laufzeit}
 \[ \mathcal{O}(|V|+|E|) \]
 \paragraph{Begründung:}
 Jeder von $s$ aus erreichbare Knoten wird nur einmal in die Queue aufgenommen und auch ihr entfernt. Für jeden Knoten muss nur einmal seine Adjazenzliste durchlaufen werden.

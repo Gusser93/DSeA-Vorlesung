@@ -1,6 +1,6 @@
-\chapter{Vorlesung}
-\section{Binärer Suchbaum}
-
+%\chapter{Vorlesung}
+%\section{Binärer Suchbaum}
+\pagebreak
 \begin{figure}[H]
 \includegraphics[width=0.2\linewidth]{10/Grafik/img1.png}
 \captionsetup{justification=raggedright, singlelinecheck=false}
@@ -10,9 +10,9 @@
 \section{Pseudo-Code}
 \lstinputlisting[language=Java, style = pseudo]{10/Code/Node.java}
 
-\pagebreak
 
-\section{AVL-Bäume}
+\chapter{AVL-Bäume von Adelson-Velsky and Landis}%Ursprünglich nur AVL-Bäume, Ergänzung von Markus
+\section{Allgemein} %Ergänzung von Markus
 \paragraph{Ziel}Binärer Suchbaum mit garantierter Such-, Einfüge- und Löschzeit $O(\log n )$
 \paragraph{Idee} Definiere eine Balancebedingung, die dafür sorgt, dass die Baumstruktur möglichst nahe an der Idealstruktur eines vollständigen binären Baumes liegt.\\
 Aber gleichzeitig soll es möglich sein ''schnell'' Strukturänderungen beim Einfügen und Löschen vorzunehmen. \\
@@ -52,13 +52,15 @@ $T_n ~\hat{=}~$ maximale Tiefe eines randomisierten Suchbaums mit $\{1,...,n\}$ 
 
 \textbf{Mit der Abschätzung: $max\{2^{T_1}, 2^{T_2}\} \leq 2^{T_1} + 2^{T_2}$ folgt:}
 \[E(X_n) = E \left(\sum^n_{i=1} \frac{1}{n} \cdot  2 \cdot max\{X_{i-1}, X_{n-1}\} \right) \]
-\[= \frac{2}{n} \sum^n_{i=1} E \left(max\{X_{i-1}, X_{n-1}\} \right) \leq \frac{2}{n} \sum^n_{i=1} E \left(X_{i-1} + X_{n-1} \right) = \frac{2}{n} \sum^n_{i=1} \left[E(X_{i-1}) + E(X_{n-i}) \right] \leq \frac{4}{n} \sum^{n-1}_{i=0} E(X_i)\] 
+\[= \frac{2}{n} \sum^n_{i=1} E \left(max\{X_{i-1}, X_{n-1}\} \right) \leq \frac{2}{n} \sum^n_{i=1} E \left(X_{i-1} + X_{n-1} \right) \]
+\[=\frac{2}{n} \sum^n_{i=1} \left[E(X_{i-1}) + E(X_{n-i}) \right] \leq \frac{4}{n} \sum^{n-1}_{i=0} E(X_i)\] 
 
 \[ n \cdot E(X_n) = 4 \cdot \sum^{n-1}_{i=0} E(X_i) ~~~(1)\]
 \[ (n-1) \cdot E(X_{n-1}) = 4 \cdot \sum^{n-2}_{i=0} E(X_i) ~~~(2)\]
 \[ nE(X_n) - (n-1)E(X_{n-1}) = 4E(X_n) ~~~(1)-(2)\]
 \[\Leftrightarrow nE(X_n) = (n+3)E(X_{n-1})\]
-\[E(X_n)=\frac{n+3}{n}E(X_{n-1})=\frac{n+3}{n} \cdot \frac{n+2}{n-1}E(X_{n-2}) = \prod^{n-1}_{i=0} \frac{n+3-i}{n-i} = \frac{n+3}{n} \cdot \frac{n+2}{n-1} \cdot \frac{n+1}{n-2} \cdot \frac{n}{n-3} \cdot ... \cdot \frac{6}{3} \cdot \frac{8}{2} \cdot \frac{4}{1} \]\\
+\[E(X_n)=\frac{n+3}{n}E(X_{n-1})=\frac{n+3}{n} \cdot \frac{n+2}{n-1}E(X_{n-2}) = \prod^{n-1}_{i=0} \frac{n+3-i}{n-i}\]
+\[ = \frac{n+3}{n} \cdot \frac{n+2}{n-1} \cdot \frac{n+1}{n-2} \cdot \frac{n}{n-3} \cdot ... \cdot \frac{6}{3} \cdot \frac{8}{2} \cdot \frac{4}{1} \]\\
 
 \textbf{Mit der ''Jensenschen Ungleichung'' folgt:}
 \[ \sum_i Pr(T=t_i) \cdot f(t_i) \geq f\left(\sum_i Pr(T=t_i) \cdot t_i\right) = \frac{ (n+3)(n+2)(n+1) } { 3!}  \cdot c \Rightarrow E(X_n) \in O(n^3)\]
