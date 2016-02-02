@@ -77,7 +77,7 @@ $G_M = (V_1\cup V_2\cup \{ s \}, E')$
  	q.e.d.
  \end{flushright}
  \subsection{Pseudo-Code}
- \begin{lstlisting}
+ \begin{lstlisting}[style = pseudo]
  M = $\emptyset$;
  do {
 	 P = findAugmPath($G_M$);
@@ -100,7 +100,7 @@ $G_M = (V_1\cup V_2\cup \{ s \}, E')$
  \[ =\mathcal{O}(|V|\cdot|E|) \]
  \section{Hopcroft-Karp-Algorithmus}
  erzielt Laufzeit von $\mathcal{O}(\sqrt{|V|}\cdot |E|)$\\
- \begin{lstlisting}
+ \begin{lstlisting}[style = pseudo]
 M = $\emptyset$;
 do {
 	$G_L$ = buildLevelGraph($G_M$);			//Knotendisjunkte $M$-augmentierende Pfade

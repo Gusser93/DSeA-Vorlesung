@@ -106,7 +106,7 @@ Da alle Kanten in der inneren Schleife einmal relaxiert werden, trifft dies insb
 Warum folgt aus der Gültigkeit dieser Invariante die Korrektheit des Algorithmus?
 \paragraph{Antwort}
 Alle kürzesten Wege benutzen höchstens $|V|-1$ Kanten, ansonsten hätten sie einen Zyklus mit Gewicht $\geq 0$, den man auch weglassen kann.
-\begin{lstlisting}
+\begin{lstlisting}[style = pseudo]
 //Erkennung der Existenz negativer Zyklen
 forall((u,v) /eIn E)
   if(d[v] > d[u] + w(u,v))

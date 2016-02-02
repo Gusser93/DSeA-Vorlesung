@@ -99,7 +99,7 @@ Sei $p=(s=v_0,v_1,v_2,\ldots,v_k)$
 	\label{fig:Dijkstra3}
 	\end{figure}
 \[ \delta(s,v)\leq \delta(s,U)+w(u,v) \]
-\begin{lstlisting}
+\begin{lstlisting}[style = pseudo]
 relax(u,v,w) {
   if(d[v] > d[u]+w(u,v) ) {
     d[v] = d[u] + w(u,v);
