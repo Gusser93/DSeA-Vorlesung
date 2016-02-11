@@ -38,13 +38,13 @@ $T(n) =$ Zahl der durchgeführten Elementvergleiche für eine Eingabemenge von n
 
 \begin{tabular}{rcc}
 	1.&Phase & n-1 \\
-	2.&Phase & n-1 \\
-	3.&Phase & n-1 \\
+	2.&Phase & n-2 \\
+	3.&Phase & n-3 \\
 	 & $\vdots$ &  \\
-	i.& Phase & n-1 \\
+	i.& Phase & n-i \\
 	 & $\vdots$ &  \\
-	(n-1).&Phase & n-1 \\ \hline
-	\multicolumn{3}{c}{$1+2+3+\ldots+(n+1)$}
+	(n-1).&Phase & n-(n-1)=1 \\ \hline
+	\multicolumn{3}{c}{$1+2+3+\ldots+(n-1)$}
 \end{tabular}
 \[ T(n)=\sum_{i=1}^{n-1} i = \frac{n(n-1)}{2}\in O(n^2) \]
 \begin{tabular}{c|c}
