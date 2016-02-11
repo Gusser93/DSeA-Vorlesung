@@ -1,6 +1,6 @@
 \chapter{Master-Theorem}
 \begin{flalign*}
-&T(n)=a\cdot T\left(\frac{n}{b} + n^{\alpha} \right)&\\
+&T(n)=a\cdot T\left(\frac{n}{b}\right) + n^{\alpha}&\\
 &T(1)= 0&\\
 &T(n) = a^i T\left(\frac{n}{b^i}\right) + n^{\alpha} \sum_{j=0}^{i-1} \left(\frac{a}{b^{\alpha}} \right)^j&\\
 \\
