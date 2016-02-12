@@ -3,9 +3,16 @@
 \begin{flalign*}
 &T(n) = a \cdot T \left(\frac{n}{b} \right) + g(n)&\\
 &T(1) = c&\\
-&T\left(n\right) = \Theta \left(n^{\alpha} \left(1 + \int_1^n \frac{g\left(x\right)}{x^{1+\alpha}} dx\right)\right)  ~~~\text{mit}~\frac{a}{b^{\alpha}} = 1~~~\alpha = \log_b(a)&\\
-&\text{z.B. }T(n) = 2T\left(\frac{n}{2} \right) + \log(n) \text{\footnote{klausurrelevant}}&
+&T\left(n\right) = \Theta \left(n^{\alpha} \left(1 + \int_1^n \frac{g\left(x\right)}{x^{1+\alpha}} dx\right)\right)  ~~~\text{mit}~\frac{a}{b^{\alpha}} = 1~~~\alpha = \log_b(a)&
 \end{flalign*}
+z.B. $\displaystyle T(n) = 2T\left(\frac{n}{2} \right) + \log(n)$\footnote{klausurrelevant}
+\subsection[Ergänzung für den allgemeinen Fall]{Ergänzung für den allgemeinen Fall (nicht aus der Vorlesung)}
+\begin{flalign*}
+	&T(n) = \sum_{i=1}^{k} \left[  a_i \cdot T \left(\frac{n}{b_i} \right) \right] + g(n)&\\
+	&T(1) = c&\\
+	&T\left(n\right) = \Theta \left(n^{\alpha} \left(1 + \int_1^n \frac{g\left(x\right)}{x^{1+\alpha}} dx\right)\right)  ~~~\text{mit}~\sum_{i=1}^{k}\frac{a_i}{b_i^{\alpha}} = 1&
+\end{flalign*}
+
 
 \section{Beweisidee}
 \begin{flalign*}
