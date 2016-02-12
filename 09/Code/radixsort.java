@@ -15,9 +15,10 @@ void radixsort(int[] a) { // positives Element
                 n0 = n0+1;
             }
         }
+
+        for (int j=0; j<n0; j++)
+            a[j] = b0[j];
+        for (int j=0; j<n1; j++)
+            a[n0+j] = b1[j];
     }
-    for (int j=0; j<n0; j++)
-        a[j] = b0[j];
-    for (int j=0; j<n1; j++)
-        a[n0+j] = b1[j];
 }
