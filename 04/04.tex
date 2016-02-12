@@ -144,11 +144,11 @@ Sei $T(n)$ die Laufzeit dieser rekursiven Methode zur Multiplikation zweier $n$-
 1.) ($A_0$ \hly{+} $A_1$) \hlg{$\cdot$}  ($B_0$ \hly{+} $B_1$) $= A_0 B_0 + A_0 B_1 + A_1 B_0 + A_1 B_1 = P$\\
 2.) $A_0$  \hlg{$\cdot$} $B_0$\\
 3.) $A_1$  \hlg{$\cdot$} $B_1$\\
-$\Rightarrow (A_0 B_1+ A_1 B_0) = (P$  \hly{-} $(A_0 B_0)$  \hly{-} $(A_1 B_1))$\\
+$\Rightarrow (A_0 B_1+ A_1 B_0)  \cdot 2^{\frac{n}{2}} = (P$  \hly{-} $(A_0 B_0)$  \hly{-} $(A_1 B_1))  \cdot 2^{\frac{n}{2}}$\\
 
 Es verbleiben  \hlg{3} Multiplikationen und \hly{ } Additionen\\
 
-$AB = A_0 B_0$ \hly{+} $(P-(A_0 B_0) - (A_1 B_1))$ \hly{+} $A_1 B_1 2^n$
+$AB = A_0 B_0$ \hly{+} $(P-(A_0 B_0) - (A_1 B_1)) \cdot 2^{\frac{n}{2}}$ \hly{+} $A_1 B_1 2^n$
 
 
 \paragraph{Mastertheoreme}
