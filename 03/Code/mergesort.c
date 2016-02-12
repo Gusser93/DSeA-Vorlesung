@@ -9,7 +9,7 @@ void mergesort(int links, int rechts) {
     merge(links, mitte, rechts);
 }
 
-void merge(int links, int mitte int rechts) {
+void merge(int links, int mitte, int rechts) {
     int i = links;
     int j = mitte+1;
     int k = links;
