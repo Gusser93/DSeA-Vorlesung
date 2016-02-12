@@ -4,7 +4,7 @@
 &T(n) = a \cdot T \left(\frac{n}{b} \right) + g(n)&\\
 &T(1) = c&\\
 &T\left(n\right) = \Theta \left(n^{\alpha} \left(1 + \int_1^n \frac{g\left(x\right)}{x^{1+\alpha}} dx\right)\right)  ~~~\text{mit}~\frac{a}{b^{\alpha}} = 1~~~\alpha = \log_b(a)&\\
-&\text{z.B. }T(n) = 2+ \frac{n}{2} + \log(n)&
+&\text{z.B. }T(n) = 2T\left(\frac{n}{2} \right) + \log(n) \text{\footnote{klausurrelevant}}&
 \end{flalign*}
 
 \section{Beweisidee}
