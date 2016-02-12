@@ -1,0 +1,32 @@
+graph G {
+
+	1	[label=<l
+		|k<FONT POINT-SIZE="10"><SUB>3 </SUB></FONT>
+		|r>,height=0,width=0,margin=0.05];
+	1--2;
+	1--3;
+
+	2	[label=<|k<FONT POINT-SIZE="10"><SUB>1 </SUB></FONT>
+		|k<FONT POINT-SIZE="10"><SUB>2 </SUB></FONT>|>,
+		height=0,width=0,margin=0.1];
+
+	3
+		[label=<|k<FONT POINT-SIZE="10"><SUB>4 </SUB></FONT>
+		|k<FONT POINT-SIZE="10"><SUB>5 </SUB></FONT>|>,
+		height=0,width=0,margin=0.1];
+
+	2--a;
+	2--b;
+	2--c;
+	3--d;
+	3--e;
+	3--f;
+	
+	a	[height=0,width=0,margin=0.04,shape=box];
+	b	[height=0,width=0,margin=0.04,shape=box];
+	c	[height=0,width=0,margin=0.04,shape=box];
+	d	[height=0,width=0,margin=0.04,shape=box];
+	e	[height=0,width=0,margin=0.04,shape=box];
+	f	[height=0,width=0,margin=0.04,shape=box];
+
+}

@@ -2,13 +2,70 @@
 \chapter{(a,b)-Suchbäume}
 Blattorientierte Speicherung der Elemente\\
 Innere Knoten haben mindestens a und höchstens b Kinder und tragen entsprechende Schlüsselwerte, um die Suche zu leiten.
-\paragraph{Beispiel:}%%2 Bilder einfügen
+\paragraph{Beispiel:}
+$ $
+\begin{figure}[H]
+\centering
+\begin{subfigure}[H]{0.6\linewidth}
+	\centering
+	\captionabove*{2-5 Bäume}
+	\includegraphics[width=0.8\linewidth]{12/Grafik/graph1}
+	\caption{$x_1\leq k_1<x_2\leq k_2<x_3\leq K_3<x_4\leq k_4<x_5$}
+	\label{fig:graph1}
+\end{subfigure}
+\begin{subfigure}[H]{0.3\linewidth}
+	\centering
+	\captionabove*{Knotengrad$=2$}
+	\includegraphics[width=0.7\linewidth]{12/Grafik/graph2}
+	\caption{$x_1\leq k_1<x_2$}
+	\label{fig:graph2}
+\end{subfigure}
+\end{figure}
+
 \[h\hat{=}\text{Tiefe}\Rightarrow ~~ a^h\leq n \leq b^h ~\Rightarrow ~ \log_b n \leq h \leq \log_a n\]
-%Bilder
+\begin{figure}[h]
+\centering
+\includegraphics[width=\linewidth]{12/Grafik/graph3}
+\caption{Einfügen und Löschen in einem 2-5 Baum}
+\label{fig:graph3}
+\end{figure}
+
 \section{Aufspaltung bei Einfügen}
-%Bilder
+$ $
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[H]{0.4\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{12/Grafik/graph4}
+		\caption{$a<b<c<d<e<f$}
+		\label{fig:graph4}
+	\end{subfigure}
+	{\Huge $\Rightarrow$}
+	\begin{subfigure}[H]{0.4\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{12/Grafik/graph5}
+		\caption{$a<b<c<d<e<f$}
+		\label{fig:graph5}
+	\end{subfigure}
+\end{figure}
 \section{Verschmelzen von Knoten beim Löschen}
-%Bilder
+$ $
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}[H]{0.4\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{12/Grafik/graph6}
+		\caption{$b$ wird gelöscht}
+		\label{fig:graph6}
+	\end{subfigure}
+	{\Huge $\Rightarrow$}
+	\begin{subfigure}[H]{0.4\linewidth}
+		\centering
+		\includegraphics[width=0.675\linewidth]{12/Grafik/graph7}
+		\caption{Baum ohne $b$}
+		\label{fig:graph7}
+	\end{subfigure}
+\end{figure}
 Aufspalte- und Verschmelze-Operationen können sich von der Blattebene bis zur Wurzel kaskadenartig fortpflanzen. Sie bleiben aber auf den Suchpfad begrenzt.\\
 $\Rightarrow$ Umbaukosten sind beschränkt durch die Baumtiefe $=O(\log n)$
 \chapter{Amortisierte Analyse}

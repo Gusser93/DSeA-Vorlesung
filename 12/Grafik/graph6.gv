@@ -1,0 +1,29 @@
+graph G {
+
+	layers = "test1:test2"
+	1	[label=" ",width=0.5, height=0.3,margin=0];
+	1--2;
+	1--3;
+
+	2	[label=" ",width=0.5, height=0.3,margin=0];
+	2--a;
+	2--b;
+
+	3	[label=" ",width=0.5, height=0.3,margin=0];
+	3--c;
+	3--d;
+
+	a	[shape=box,width=0, height=0,margin=0.05];
+	subgraph cluster_cross{
+		style=solid;
+		shape=box;
+		fixwidth=0;
+		height=0;
+		margin=0.05;
+        #sdl_stop [shape=sdl_stop, peripheries=0];
+		b	[shape=sdl_stop,peripheries=0,width=0, height=0,margin=0.05];
+	}
+	c	[shape=box,width=0, height=0,margin=0.05];
+	d	[shape=box,width=0, height=0,margin=0.05];
+
+}
