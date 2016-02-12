@@ -5,7 +5,7 @@ void mergesort(int links, int rechts) {
     if (links >= rechts) return;
     int mitte = (links+rechts)/2;
     mergesort(links, mitte);
-    mergesort(mitte, rechts);
+    mergesort(mitte+1, rechts);
     merge(links, mitte, rechts);
 }
 
