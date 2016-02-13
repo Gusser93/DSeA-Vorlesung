@@ -68,7 +68,7 @@ z.B. $\displaystyle T(n) = 2T\left(\frac{n}{2} \right) + \log(n)$\footnote{klaus
 \[=Z + Z \sum_{n=2}^{\infty} f_{n-1} Z ^{n-1} + Z^2 \sum_{n=2}^{\infty} f_{n-2} Z^{n-2}\]
 \[\Leftrightarrow F(Z) = Z + Z \cdot F(Z) + Z^2 \cdot F(Z) \]
 \[\Leftrightarrow -Z = Z^2 F(Z) + Z F(Z) - F(Z) = F(Z)(Z^2+Z-1) \]
-\[ F(Z) = - \frac{Z}{Z^2+Z+1} \]
+\[ F(Z) = - \frac{Z}{Z^2+Z-1} \]
 
 
 \begin{mdframed}
@@ -78,7 +78,7 @@ z.B. $\displaystyle T(n) = 2T\left(\frac{n}{2} \right) + \log(n)$\footnote{klaus
 \end{flalign*}
 \end{mdframed}
 
-\[\Rightarrow F(Z) = -\frac{Z}{Z^2+Z+1} \]
+\[\Rightarrow F(Z) = -\frac{Z}{Z^2+Z-1} \]
 
 
 \subsection{Nullstellen des Nennerpolynoms}
@@ -95,7 +95,7 @@ $\Rightarrow Z^2+ Z + 1 = (Z + \phi)(Z+\overline{\phi}) $		& \text{}
 \subsection{Partialbruchzerlegung}
 
 \[\frac{A}{Z+\phi} + \frac{B}{Z+\overline{\phi}} = \frac{A\cdot (Z+\overline{\phi}) + B (Z+\phi)}{(Z+\phi)(Z+\overline{\phi})} \]
-\[\Rightarrow AZ + BZ = -Z \Leftrightarrow A+B=1 ~~~\text{(1)} \]
+\[\Rightarrow AZ + BZ = -Z \Leftrightarrow A+B=-1 ~~~\text{(1)} \]
 \[A \overline{\phi} + B \phi = 0 \Leftrightarrow B = -\frac{A \overline{\phi}}{\phi} ~~~\text{(2)}\]
 \[\text{(2) in (1)}~~~ A -\frac{A \overline{\phi}}{\phi} = -1 \Leftrightarrow A \left(1- \frac{\overline{\phi}}{\phi} \right) = -1 \]
 \[\Leftrightarrow A = -\frac{1}{\sqrt{5}}\phi \]
