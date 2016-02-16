@@ -44,9 +44,9 @@ Wähle zu Beginn den Median der Mediane als Pivot Elemente. Unterteile nun die F
 \section{Laufzeitanalyse für den worst-case}
 \[T(n) = T\left(\frac{n}{5}\right)+n+T \left(\frac{7n}{10} \right) \]
 \[A_1 = \frac{n}{5},~~~~A_2 = n,~~~~A_3= \frac{7n}{10}\]
-$A_1$ = Laufzeit zur rekursiven Bestimmung des Medians der Mediane\\
+$A_1$ = Laufzeit zur rekursiven Bestimmung des Medians der Mediane mittels k-Select\\
 $A_2$ = Laufzeit zur Aufteilung in Teilfolgen\\
-$A_3$ = Laufzeit für den Aufruf von k-Select  für größere Teilfolgen, die aber sicher $\leq n - \frac{3n}{10} - \frac{7n}{10}$ hat.\\
+$A_3$ = Laufzeit für den Aufruf von k-Select  für die größere Teilfolge in jedem Durchlauf, die aber sicher $\leq n - \frac{3n}{10} = \frac{7n}{10}$ hat.\\
 
 Wende die verallgemeinerte Form von Akra-Bazzi an:\\
 $g(n)=n, ~~~a_1=a_2=1, ~~~b_1=5, ~~~b_2=\frac{10}{7}$\\
