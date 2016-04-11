@@ -14,7 +14,7 @@ Node rotateRight(Node y) {
 	Node x = y.left;
 	Node T2 = x.right;
 	y.left = T2;
-	T2.right = y;
+	x.right = y;
 	y.height = 1+max(height(y.left), height(y.right));
 	x.height = 1+max(height(x.left), height(x.right));
 	return x;
