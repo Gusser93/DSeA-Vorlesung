@@ -105,7 +105,7 @@ M = $\emptyset$;
 do {
 	$G_L$ = buildLevelGraph($G_M$);			//Knotendisjunkte $M$-augmentierende Pfade
 	$\mathcal{P}$ = findAugmPath($G_L$);				//$\mathcal{P}=P_1 \dot{\cup}P_2\dot{\cup}\ldots\dot{\cup}P_k$
-	M = M $\oplus$ \mathcal{P};
+	M = M $\oplus$ $\mathcal{P}$;
 } while($\mathcal{P} \neq \emptyset$);
  \end{lstlisting}
  $G_L$ kann mittels BFS in Zeit $\mathcal{O} (|V|+|E|)$ konstruiert werden. Zum Auffinden einer maximalen Menge von $M$-augmentierenden Pfaden in $G_L$ verwenden wir DFS und entfernen jedes mal den gefunden Pfad $P_i$ aus $G_L$. DFS sorgt dafür, dass $P_i$ in Zeit $\mathcal{O}(|P_i|)$ gefunden und gelöscht werden kann.\\
